@@ -11,7 +11,7 @@ import { Box } from '@mui/material';
 // import DrawerContent from './DrawerContent';
 import MiniDrawerStyled from './MiniDrawerStyled';
 // import { drawerWidth } from 'config';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import logo from './../../../assets/images/images/logo.svg';
 import downArrow from './../../../assets/images/images/down-arrow.svg';
@@ -89,7 +89,7 @@ const MainDrawer = () => {
             <div className="dash_left_bar_menu oflow-hd">
               <ul>
                 <li className="menu_active">
-                  <Link to="#">Dashboard</Link>
+                  <NavLink to="/dashboard">Dashboard</NavLink>
                 </li>
                 <li className="has_dropdown">
                   <Link to="#">
