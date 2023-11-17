@@ -19,7 +19,7 @@ const pieChartOptions = {
   labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
   legend: {
     show: true,
-    fontFamily: `'Roboto', sans-serif`,
+    // fontFamily: `'Roboto', sans-serif`,
     offsetX: 10,
     offsetY: 10,
     labels: {

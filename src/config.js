@@ -33,7 +33,6 @@ export const AUTH0_API = {
 
 const config = {
   defaultPath: '/dashboard/analytics',
-  fontFamily: `'Public Sans', sans-serif`,
   i18n: 'en',
   miniDrawer: false,
   container: true,

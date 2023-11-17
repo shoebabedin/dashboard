@@ -101,7 +101,7 @@ const MainDrawer = () => {
                   </Link>
                   <ul style={navChildOpen ? { display: 'block' } : { display: 'none' }}>
                     <li>
-                      <Link to="/create-event">Create Events</Link>
+                      <NavLink to="/create-event">Create Events</NavLink>
                     </li>
                     <li>
                       <Link to="">Draft</Link>

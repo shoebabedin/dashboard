@@ -41,7 +41,7 @@ const areaChartOptions = {
   },
   legend: {
     show: true,
-    fontFamily: `'Roboto', sans-serif`,
+    // fontFamily: `'Roboto', sans-serif`,
     position: 'bottom',
     offsetX: 10,
     offsetY: 10,

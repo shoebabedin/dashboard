@@ -9,39 +9,39 @@ import useConfig from 'hooks/useConfig';
 // ==============================|| CUSTOMIZATION - FONT FAMILY ||============================== //
 
 const ThemeFont = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
-  const { fontFamily, onChangeFontFamily } = useConfig();
+  // const { fontFamily, onChangeFontFamily } = useConfig();
 
-  const handleFontChange = (event) => {
-    onChangeFontFamily(event.target.value);
-  };
+  // const handleFontChange = (event) => {
+  //   onChangeFontFamily(event.target.value);
+  // };
 
-  const fonts = [
-    {
-      id: 'inter',
-      value: `'Inter', sans-serif`,
-      label: 'Inter'
-    },
-    {
-      id: 'roboto',
-      value: `'Roboto', sans-serif`,
-      label: 'Roboto'
-    },
-    {
-      id: 'poppins',
-      value: `'Poppins', sans-serif`,
-      label: 'Poppins'
-    },
-    {
-      id: 'public-sans',
-      value: `'Public Sans', sans-serif`,
-      label: 'Public Sans'
-    }
-  ];
+  // const fonts = [
+  //   {
+  //     id: 'inter',
+  //     value: `'Inter', sans-serif`,
+  //     label: 'Inter'
+  //   },
+  //   {
+  //     id: 'roboto',
+  //     value: `'Roboto', sans-serif`,
+  //     label: 'Roboto'
+  //   },
+  //   {
+  //     id: 'poppins',
+  //     value: `'Poppins', sans-serif`,
+  //     label: 'Poppins'
+  //   },
+  //   {
+  //     id: 'public-sans',
+  //     value: `'Public Sans', sans-serif`,
+  //     label: 'Public Sans'
+  //   }
+  // ];
 
   return (
-    <RadioGroup row aria-label="payment-card" name="payment-card" value={fontFamily} onChange={handleFontChange}>
+    <RadioGroup row aria-label="payment-card" name="payment-card" onChange={handleFontChange}>
       <Grid container spacing={1.75} sx={{ ml: 0 }}>
         {fonts.map((item, index) => (
           <Grid item key={index}>
