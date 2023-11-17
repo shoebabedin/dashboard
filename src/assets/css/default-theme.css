@@ -366,6 +366,8 @@ body {
 	padding: 12px 20px;
 	border: none;
 	line-height: 21px;
+	/* new css */
+	font-family: 'Lato', sans-serif;
 }
 .single_input_box select {
 	height: 45px;

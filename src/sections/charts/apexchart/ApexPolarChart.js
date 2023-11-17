@@ -21,7 +21,6 @@ const polarChartOptions = {
   },
   legend: {
     show: true,
-    // fontFamily: `'Roboto', sans-serif`,
     offsetX: 10,
     offsetY: 10,
     labels: {

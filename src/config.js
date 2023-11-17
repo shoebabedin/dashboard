@@ -32,9 +32,9 @@ export const AUTH0_API = {
 // ==============================|| THEME CONFIG  ||============================== //
 
 const config = {
-  defaultPath: '/dashboard/analytics',
+  defaultPath: '/dashboard',
   i18n: 'en',
-  miniDrawer: false,
+  miniDrawer: true,
   container: true,
   mode: 'light',
   presetColor: 'default',
