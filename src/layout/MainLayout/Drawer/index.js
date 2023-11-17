@@ -15,6 +15,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 import logo from './../../../assets/images/images/logo.svg';
 import downArrow from './../../../assets/images/images/down-arrow.svg';
+import { useState } from 'react';
 
 // ==============================|| MAIN LAYOUT - DRAWER ||============================== //
 
@@ -28,6 +29,8 @@ const MainDrawer = () => {
   // header content
   // const drawerContent = useMemo(() => <DrawerContent />, []);
   // const drawerHeader = useMemo(() => <DrawerHeader open={open} />, [open]);
+
+  const [navChildOpen, setNavChildOpen] = useState(false);
 
   return (
     <Box component="nav" sx={{ flexShrink: { md: 0 }, zIndex: 1300 }} aria-label="mailbox folders">
@@ -92,13 +95,13 @@ const MainDrawer = () => {
                   <NavLink to="/dashboard">Dashboard</NavLink>
                 </li>
                 <li className="has_dropdown">
-                  <Link to="#">
+                  <Link to="#" onClick={() => setNavChildOpen(!navChildOpen)}>
                     Create Events
                     <img src={downArrow} alt="img" />
                   </Link>
-                  <ul>
+                  <ul style={navChildOpen ? { display: 'block' } : { display: 'none' }}>
                     <li>
-                      <Link to="">Create Events</Link>
+                      <Link to="/create-event">Create Events</Link>
                     </li>
                     <li>
                       <Link to="">Draft</Link>

@@ -149,7 +149,9 @@ body {
 	padding-right: 17px;
 	background-repeat: no-repeat;
 	background-position: center right;
-	
+	/* new css */
+	display: flex;
+    align-items: center;
 }
 .dash_top_bar_right_user img{
 	height: 38px;

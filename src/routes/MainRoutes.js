@@ -8,7 +8,9 @@ import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')));
-const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
+// const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
+
+const CreateEvent = Loadable(lazy(() => import('pages/CreateEvent/CreateEvent')));
 
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
@@ -121,10 +123,24 @@ const MainRoutes = {
             {
               path: 'default',
               element: <DashboardDefault />
+            }
+            // {
+            //   path: 'analytics',
+            //   element: <DashboardAnalytics />
+            // }
+          ]
+        },
+        {
+          path: 'create-event',
+          element: <CreateEvent />,
+          children: [
+            {
+              path: 'data',
+              element: <WidgetData />
             },
             {
-              path: 'analytics',
-              element: <DashboardAnalytics />
+              path: 'chart',
+              element: <WidgetChart />
             }
           ]
         },
