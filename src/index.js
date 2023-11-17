@@ -5,6 +5,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+// css
+import 'assets/css/style.css';
+import 'assets/css/default-theme.css';
+import 'assets/css/responsive.css';
+
 // scroll bar
 import 'simplebar/src/simplebar.css';
 import 'slick-carousel/slick/slick.css';

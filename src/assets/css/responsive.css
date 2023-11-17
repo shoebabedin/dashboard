@@ -1,0 +1,48 @@
+/** ------------------------------------------------------------------
+							Wrapper Screen
+------------------------------------------------------------------ **/
+
+
+
+/** ------------------------------------------------------------------
+							Tab Screen
+------------------------------------------------------------------ **/
+@media only screen and (max-width: 991px) {
+
+}
+
+/** ------------------------------------------------------------------
+							Mobile Screen
+------------------------------------------------------------------ **/
+@media only screen and (max-width: 768px ) {
+.dash_left_bar_area {
+	margin-left: -100%;
+	width: 100%;
+}
+.dash_main_conent_wrapper {
+	padding-top: 105px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+}
+.dash_top_bar_area {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.dash_top_bar_right_menu,
+.dash_top_bar_btn {
+	display: none;
+}
+#header-mobile-menu-trigger-left {
+	display: block;
+}
+.dash_top_bar_mobile_logo {
+	display: block;
+}
+.dash_left_bar_logo button{
+	display: block;
+}
+.dash_left_bar_logo {
+	margin-bottom: 50px;
+}
+}

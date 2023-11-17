@@ -59,7 +59,7 @@ function ElevationScroll({ layout, children, window }) {
 const Header = ({ handleDrawerOpen, layout = 'landing', ...others }) => {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
-  const [drawerToggle, setDrawerToggle] = useState(false);
+  const [drawerToggle, setDrawerToggle] = useState(true);
 
   /** Method called on multiple components with different event types */
   const drawerToggler = (open) => (event) => {
