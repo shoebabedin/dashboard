@@ -97,9 +97,9 @@ const MainDrawer = () => {
                 <li className="has_dropdown">
                   <Link to="#" onClick={() => setNavChildOpen(!navChildOpen)}>
                     Create Events
-                    <img src={downArrow} alt="img" />
+                    <img src={downArrow} alt="img" className={navChildOpen ? "menu-has-child-button-active" : ""}/>
                   </Link>
-                  <ul style={navChildOpen ? { display: 'block' } : { display: 'none' }}>
+                  <ul className={navChildOpen ? "menu-has-child-open" : ""}>
                     <li>
                       <NavLink to="/create-event">Create Events</NavLink>
                     </li>

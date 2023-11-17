@@ -90,6 +90,14 @@ body {
 	padding-left: 18px;
 	margin-top: 25px;
 	display: none;
+	/* new css */
+	opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.dash_left_bar_menu ul li ul.menu-has-child-open{
+	opacity:  1;
+    transition: opacity 0.3s ease;
+    display: block;
 }
 .dash_left_bar_menu ul li ul li{
 	border-width: 0;
