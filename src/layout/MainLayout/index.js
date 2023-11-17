@@ -21,7 +21,7 @@ const MainLayout = () => {
   const theme = useTheme();
   const matchDownLG = useMediaQuery(theme.breakpoints.down('xl'));
 
-  const {  miniDrawer } = useConfig();
+  const { miniDrawer } = useConfig();
   const dispatch = useDispatch();
 
   const menu = useSelector((state) => state.menu);
@@ -54,15 +54,10 @@ const MainLayout = () => {
       <Drawer open={open} handleDrawerToggle={handleDrawerToggle} />
       <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
         <Toolbar />
- 
-    
-    {/* <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} /> */}
-    <div className="dash_main_conent_wrapper">
-      <Outlet />
-    </div>
-    {/* <Footer /> */}
-   
-      
+        {/* <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} /> */}
+        <div className="dash_main_conent_wrapper">
+          <Outlet />
+        </div>
       </Box>
     </Box>
   );

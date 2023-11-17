@@ -2,7 +2,7 @@
 						Wireframe
 ------------------------------------------------------------------ **/
 body {
-	background: #F2F2F2;
+	background-color: #F2F2F2 !important;
 	position: relative;
 }
 .dash_left_bar_area {
@@ -182,9 +182,9 @@ body {
 	/* padding-right: 40px; */
 	padding-bottom: 30px;
 	/* new css */
-	padding-top: 22px;
-    padding-left: 0px;
-	padding-right: 0px;
+	padding-top: 30px;
+    padding-left: 16px;
+	padding-right: 16px;
 }
 .dash_top_bar_mobile_logo {
 	padding-left: 30px;

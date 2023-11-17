@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logo from './../../../assets/images/images/m-logo.svg';
 import profile from './../../../assets/images/images/dp.png';
+import { useState } from 'react';
 
 // ==============================|| MAIN LAYOUT - HEADER ||============================== //
 
@@ -57,6 +58,8 @@ const Header = () => {
   //   }
   // };
 
+  const [navChildOpen, setNavChildOpen] = useState(false);
+
   return (
     <>
       {/* {!matchDownMD ? ( */}
@@ -89,11 +92,11 @@ const Header = () => {
           </div>
           <div className="dash_top_bar_right floatright">
             <div className="dash_top_bar_right_user floatright">
-              <Link to="#">
+              <Link to="#" onClick={() => setNavChildOpen(!navChildOpen)}>
                 <img src={profile} alt="img" />
                 <span>Hello, BDMusic</span>
               </Link>
-              <ul>
+              <ul style={navChildOpen ? { display: 'block' } : { display: 'none' }}>
                 <li>
                   <Link to="#">Log Out</Link>
                 </li>
