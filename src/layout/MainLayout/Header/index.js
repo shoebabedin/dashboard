@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 // import { useMemo } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
+// import { useTheme } from '@mui/material/styles';
+// import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
+// import { Toolbar } from '@mui/material';
 
 // project import
-import AppBarStyled from './AppBarStyled';
+// import AppBarStyled from './AppBarStyled';
 // import HeaderContent from './HeaderContent';
 // import IconButton from 'components/@extended/IconButton';
 
@@ -18,8 +19,8 @@ import profile from './../../../assets/images/images/dp.png';
 
 // ==============================|| MAIN LAYOUT - HEADER ||============================== //
 
-const Header = ({ open, handleDrawerToggle }) => {
-  const theme = useTheme();
+const Header = () => {
+  // const theme = useTheme();
   // const matchDownMD = useMediaQuery(theme.breakpoints.down('lg'));
 
   // header content
@@ -29,32 +30,32 @@ const Header = ({ open, handleDrawerToggle }) => {
   // const iconBackColor = theme.palette.mode === 'dark' ? 'background.default' : 'grey.100';
 
   // common header
-  const mainHeader = (
-    <Toolbar>
-      {/* <IconButton
-        aria-label="open drawer"
-        onClick={handleDrawerToggle}
-        edge="start"
-        color="secondary"
-        variant="light"
-        sx={{ color: 'text.primary', bgcolor: open ? iconBackColorOpen : iconBackColor, ml: { xs: 0, lg: -2 } }}
-      >
-        {!open ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </IconButton> */}
-      {/* {headerContent} */}
-    </Toolbar>
-  );
+  // const mainHeader = (
+  //   <Toolbar>
+  //     <IconButton
+  //       aria-label="open drawer"
+  //       onClick={handleDrawerToggle}
+  //       edge="start"
+  //       color="secondary"
+  //       variant="light"
+  //       sx={{ color: 'text.primary', bgcolor: open ? iconBackColorOpen : iconBackColor, ml: { xs: 0, lg: -2 } }}
+  //     >
+  //       {!open ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+  //     </IconButton>
+  //     {headerContent}
+  //   </Toolbar>
+  // );
 
   // app-bar params
-  const appBar = {
-    position: 'fixed',
-    color: 'inherit',
-    elevation: 0,
-    sx: {
-      borderBottom: `1px solid ${theme.palette.divider}`
-      // boxShadow: theme.customShadows.z1
-    }
-  };
+  // const appBar = {
+  //   position: 'fixed',
+  //   color: 'inherit',
+  //   elevation: 0,
+  //   sx: {
+  //     borderBottom: `1px solid ${theme.palette.divider}`
+  //     // boxShadow: theme.customShadows.z1
+  //   }
+  // };
 
   return (
     <>
