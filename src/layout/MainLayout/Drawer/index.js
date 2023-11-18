@@ -5,7 +5,21 @@ import { useState } from 'react';
 
 const MainDrawer = ({ customOpen, setCustomOpen }) => {
   const navigate = useLocation();
-  const [navChildOpen, setNavChildOpen] = useState(false);
+
+   // State for managing the open/closed state of each dropdown
+   const [dropdownStates, setDropdownStates] = useState({
+    createEvents: false,
+    ticketing: false,
+    settingPrivacy: false,
+  });
+
+  // Function to toggle the state of a specific dropdown
+  const toggleDropdown = (dropdown) => {
+    setDropdownStates((prevState) => ({
+      ...prevState,
+      [dropdown]: !prevState[dropdown],
+    }));
+  };
 
   return (
     <>
@@ -41,11 +55,11 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                 <Link to="/dashboard">Dashboard</Link>
               </li>
               <li className="has_dropdown">
-                <Link to="#" onClick={() => setNavChildOpen(!navChildOpen)}>
+                <Link to="#" onClick={() => toggleDropdown('createEvents')}>
                   Create Events
-                  <img src={downArrow} alt="img" className={navChildOpen ? 'menu-has-child-button-active' : ''} />
+                  <img src={downArrow} alt="img" className={dropdownStates.createEvents ? 'menu-has-child-button-active' : ''} />
                 </Link>
-                <ul className={navChildOpen ? 'menu-has-child-open' : ''}>
+                <ul className={dropdownStates.createEvents ? 'menu-has-child-open' : ''}>
                   <li className={navigate.pathname === "/create-event" && "menu_active"}>
                     <Link to="/create-event">Create Events</Link>
                   </li>
@@ -61,11 +75,11 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                 <Link to="">Manage Events</Link>
               </li>
               <li className="has_dropdown">
-                <Link to="#">
+                <Link to="#" onClick={() => toggleDropdown('tracking')}>
                   Ticketing & Registration
-                  <img src={downArrow} alt="img" />
+                  <img src={downArrow} alt="img" className={dropdownStates.tracking ? 'menu-has-child-button-active' : ''}/>
                 </Link>
-                <ul>
+                <ul className={dropdownStates.tracking ? 'menu-has-child-open' : ''}>
                   <li>
                     <Link to="">Create Ticket</Link>
                   </li>
@@ -87,11 +101,11 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                 <Link to="">Company Information</Link>
               </li>
               <li className="has_dropdown">
-                <Link to="#">
+                <Link to="#" onClick={() => toggleDropdown('settings')}>
                   Setting and Privacy
-                  <img src={downArrow} alt="img" />
+                  <img src={downArrow} alt="img" className={dropdownStates.settings ? 'menu-has-child-button-active' : ''}/>
                 </Link>
-                <ul>
+                <ul className={dropdownStates.settings ? 'menu-has-child-open' : ''}>
                   <li>
                     <Link to="">Users and Roles</Link>
                   </li>
