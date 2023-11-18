@@ -185,14 +185,14 @@ body {
 .dash_top_bar_right_menu ul li a{}
 .dash_top_bar_right_menu ul li a:hover{}
 .dash_main_conent_wrapper {
-	/* padding-top: 105px;
-	padding-left: 258px; */
-	/* padding-right: 40px; */
+	padding-top: 105px;
+	padding-left: 258px;
+	padding-right: 40px;
 	padding-bottom: 30px;
 	/* new css */
-	padding-top: 30px;
+	/* padding-top: 30px;
     padding-left: 16px;
-	padding-right: 16px;
+	padding-right: 16px; */
 }
 .dash_top_bar_mobile_logo {
 	padding-left: 30px;

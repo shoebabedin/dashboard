@@ -1,18 +1,3 @@
-import PropTypes from 'prop-types';
-// import { useMemo } from 'react';
-
-// material-ui
-// import { useTheme } from '@mui/material/styles';
-// import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
-// import { Toolbar } from '@mui/material';
-
-// project import
-// import AppBarStyled from './AppBarStyled';
-// import HeaderContent from './HeaderContent';
-// import IconButton from 'components/@extended/IconButton';
-
-// assets
-// import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import logo from './../../../assets/images/images/m-logo.svg';
 import profile from './../../../assets/images/images/dp.png';
@@ -20,55 +5,13 @@ import { useState } from 'react';
 
 // ==============================|| MAIN LAYOUT - HEADER ||============================== //
 
-const Header = () => {
-  // const theme = useTheme();
-  // const matchDownMD = useMediaQuery(theme.breakpoints.down('lg'));
-
-  // header content
-  // const headerContent = useMemo(() => <HeaderContent />, []);
-
-  // const iconBackColorOpen = theme.palette.mode === 'dark' ? 'grey.200' : 'grey.300';
-  // const iconBackColor = theme.palette.mode === 'dark' ? 'background.default' : 'grey.100';
-
-  // common header
-  // const mainHeader = (
-  //   <Toolbar>
-  //     <IconButton
-  //       aria-label="open drawer"
-  //       onClick={handleDrawerToggle}
-  //       edge="start"
-  //       color="secondary"
-  //       variant="light"
-  //       sx={{ color: 'text.primary', bgcolor: open ? iconBackColorOpen : iconBackColor, ml: { xs: 0, lg: -2 } }}
-  //     >
-  //       {!open ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-  //     </IconButton>
-  //     {headerContent}
-  //   </Toolbar>
-  // );
-
-  // app-bar params
-  // const appBar = {
-  //   position: 'fixed',
-  //   color: 'inherit',
-  //   elevation: 0,
-  //   sx: {
-  //     borderBottom: `1px solid ${theme.palette.divider}`
-  //     // boxShadow: theme.customShadows.z1
-  //   }
-  // };
-
+const Header = ({setCustomOpen, customOpen}) => {
+  
   const [navChildOpen, setNavChildOpen] = useState(false);
 
   return (
     <>
-      {/* {!matchDownMD ? ( */}
-      {/* <AppBarStyled open={open} {...appBar}> */}
-      {/* {mainHeader} */}
-      {/* </AppBarStyled> */}
-      {/* ) : ( */}
-      {/* <AppBar {...appBar}>{mainHeader}</AppBar> */}
-      {/* )} */}
+    
       <div className="dash_top_bar_area">
         <div className="dash_top_bar">
           <div className="dash_top_bar_mobile_logo floatleft oflow-hd">
@@ -76,11 +19,11 @@ const Header = () => {
               <img src={logo} alt="img" />
             </Link>
           </div>
-          <button className="header-mobile-menu-trigger floatright" id="header-mobile-menu-trigger-left">
+          <button className="header-mobile-menu-trigger floatright" id="header-mobile-menu-trigger-left" onClick={() => setCustomOpen(!customOpen)}>
             <i className="fas fa-bars"></i>
           </button>
           <div className="dash_top_bar_btn floatleft oflow-hd">
-            <Link to="">
+            <Link to="/create-event">
               Create Event
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -147,11 +90,6 @@ const Header = () => {
       </div>
     </>
   );
-};
-
-Header.propTypes = {
-  open: PropTypes.bool,
-  handleDrawerToggle: PropTypes.func
 };
 
 export default Header;
