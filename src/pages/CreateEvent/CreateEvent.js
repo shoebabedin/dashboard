@@ -10,7 +10,6 @@ const CreateEvent = () => {
   const [selectedValue, setSelectedValue] = useState('1');
   const [step, setStep] = useState(1);
 
-
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
   };
@@ -32,7 +31,7 @@ const CreateEvent = () => {
                 </div>
                 <div className="form_left_col_progress oflow-hd">
                   <ul>
-                    <li className={step === 1 && step < 2 && "current"}>
+                    <li className={step === 1 && 'current' || step >= 1 && "checked"}>
                       <Link to="#">
                         <div>
                           <span>01</span>
@@ -46,7 +45,7 @@ const CreateEvent = () => {
                         <p>Event Information</p>
                       </Link>
                     </li>
-                    <li className={step === 2 && step < 3 && "current"}>
+                    <li className={step === 2 && 'current' || step >= 2 && "checked"}>
                       <Link to="#">
                         <div>
                           <span>02</span>
@@ -60,7 +59,7 @@ const CreateEvent = () => {
                         <p>Event Configuration</p>
                       </Link>
                     </li>
-                    <li className={step === 3 && step < 4 && "current"}>
+                    <li className={step === 3 && 'current' || step >= 3 && "checked"}>
                       <Link to="#">
                         <div>
                           <span>03</span>
@@ -74,7 +73,7 @@ const CreateEvent = () => {
                         <p>Event Contents</p>
                       </Link>
                     </li>
-                    <li className={step === 4 && step < 5 && "current"}>
+                    <li className={step === 4 && 'current' || step >= 4 && "checked"}>
                       <Link to="#">
                         <div>
                           <span>04</span>
@@ -88,7 +87,7 @@ const CreateEvent = () => {
                         <p>Terms and Conditions</p>
                       </Link>
                     </li>
-                    <li className={step === 5 && "current"}>
+                    <li className={step === 5 && 'current'}>
                       <Link to="#">
                         <div>
                           <span>05</span>
