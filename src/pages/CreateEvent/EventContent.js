@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import profile from "./../../assets/images/images/simg.png"
 
 const EventContent = () => {
   return (
@@ -57,7 +58,7 @@ const EventContent = () => {
                       </tr>
                       <tr>
                         <td>
-                          <img src="images/simg.png" alt="img" />
+                          <img src={profile} alt="img" />
                         </td>
                         <td>Rockstar</td>
                         <td>Title Sponsor</td>
