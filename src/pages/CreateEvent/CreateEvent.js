@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CreateEvent = () => {
+  const [selectedValue, setSelectedValue] = useState('1');
+
+  const handleDropdownChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  console.log(selectedValue);
   return (
     <>
       <div className="dash_content_main oflow-hd">
@@ -152,14 +159,14 @@ const CreateEvent = () => {
                             </svg>
                           </span>
                         </label>
-                        <select id="ei_duration" name="ei_duration">
+                        <select id="ei_duration" name="ei_duration" value={selectedValue} onChange={handleDropdownChange}>
                           <option value="1">Day 1</option>
                           <option value="2">Day 2</option>
                           <option value="3">Day 3</option>
                           <option value="4">Day 4</option>
                           <option value="5">Day 5</option>
                         </select>
-                        <div className="single_input_box_duration_extra">
+                        <div className="single_input_box_duration_extra" style={selectedValue > 1 ? {display: 'block'} : {display: 'none'}}>
                           <div className="single_input_box_rado">
                             <ul>
                               <li>
