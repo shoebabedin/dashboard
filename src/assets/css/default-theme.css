@@ -483,9 +483,9 @@ select {
 .tooltips:hover {
 	opacity: 1;
 }
-.single_input_box_duration_extra {
+/* .single_input_box_duration_extra {
 	display: none;
-}
+} */
 .multifieldrow {
 	margin: -5px -7.5px !important;
 }

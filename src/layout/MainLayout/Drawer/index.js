@@ -3,17 +3,14 @@ import logo from './../../../assets/images/images/logo.svg';
 import downArrow from './../../../assets/images/images/down-arrow.svg';
 import { useState } from 'react';
 
-// ==============================|| MAIN LAYOUT - DRAWER ||============================== //
-
-const MainDrawer = ({ setCustomOpen, customOpen }) => {
+const MainDrawer = ({ customOpen, setCustomOpen }) => {
   const [navChildOpen, setNavChildOpen] = useState(false);
-console.log(customOpen);
   return (
     <>
       <div className={`dash_left_bar_area oflow-hd ${customOpen ? 'dash_left_bar_area_active' : ''}`}>
         <div className="dash_left_bar">
           <div className="dash_left_bar_logo oflow-hd">
-            <Link to="">
+            <Link to="#">
               <img src={logo} alt="img" />
             </Link>
             <button className="mobile_menu_close" onClick={() => setCustomOpen(false)}>
@@ -108,5 +105,7 @@ console.log(customOpen);
     </>
   );
 };
+
+
 
 export default MainDrawer;

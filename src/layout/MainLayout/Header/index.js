@@ -5,21 +5,22 @@ import { useState } from 'react';
 
 // ==============================|| MAIN LAYOUT - HEADER ||============================== //
 
-const Header = ({setCustomOpen, customOpen}) => {
-  
+const Header = ({ setCustomOpen, customOpen }) => {
   const [navChildOpen, setNavChildOpen] = useState(false);
-
   return (
     <>
-    
       <div className="dash_top_bar_area">
         <div className="dash_top_bar">
           <div className="dash_top_bar_mobile_logo floatleft oflow-hd">
-            <Link to="">
+            <Link to="#">
               <img src={logo} alt="img" />
             </Link>
           </div>
-          <button className="header-mobile-menu-trigger floatright" id="header-mobile-menu-trigger-left" onClick={() => setCustomOpen(!customOpen)}>
+          <button
+            className="header-mobile-menu-trigger floatright"
+            id="header-mobile-menu-trigger-left"
+            onClick={() => setCustomOpen(!customOpen)}
+          >
             <i className="fas fa-bars"></i>
           </button>
           <div className="dash_top_bar_btn floatleft oflow-hd">
@@ -91,5 +92,7 @@ const Header = ({setCustomOpen, customOpen}) => {
     </>
   );
 };
+
+
 
 export default Header;
