@@ -10,11 +10,9 @@ const MainLayout = () => {
     <>
       <Header setCustomOpen={setCustomOpen} customOpen={customOpen}/>
       <Drawer setCustomOpen={setCustomOpen} customOpen={customOpen}/>
-  
         <div className="dash_main_conent_wrapper">
           <Outlet />
         </div>
- 
     </>
   );
 };

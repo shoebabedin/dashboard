@@ -5,10 +5,9 @@ import { useState } from 'react';
 
 // ==============================|| MAIN LAYOUT - DRAWER ||============================== //
 
-const MainDrawer = ({setNavChildOpen, customOpen }) => {
-  console.log(customOpen);
+const MainDrawer = ({ setCustomOpen, customOpen }) => {
   const [navChildOpen, setNavChildOpen] = useState(false);
-
+console.log(customOpen);
   return (
     <>
       <div className={`dash_left_bar_area oflow-hd ${customOpen ? 'dash_left_bar_area_active' : ''}`}>
@@ -17,7 +16,7 @@ const MainDrawer = ({setNavChildOpen, customOpen }) => {
             <Link to="">
               <img src={logo} alt="img" />
             </Link>
-            <button className="mobile_menu_close" onClick={setNavChildOpen(false)}>
+            <button className="mobile_menu_close" onClick={() => setCustomOpen(false)}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_535_2)">
                   <path
@@ -109,6 +108,5 @@ const MainDrawer = ({setNavChildOpen, customOpen }) => {
     </>
   );
 };
-
 
 export default MainDrawer;
