@@ -1,10 +1,12 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from './../../../assets/images/images/logo.svg';
 import downArrow from './../../../assets/images/images/down-arrow.svg';
 import { useState } from 'react';
 
 const MainDrawer = ({ customOpen, setCustomOpen }) => {
+  const navigate = useLocation();
   const [navChildOpen, setNavChildOpen] = useState(false);
+
   return (
     <>
       <div className={`dash_left_bar_area oflow-hd ${customOpen ? 'dash_left_bar_area_active' : ''}`}>
@@ -35,8 +37,8 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
           </div>
           <div className="dash_left_bar_menu oflow-hd">
             <ul>
-              <li className="menu_active">
-                <NavLink to="/dashboard">Dashboard</NavLink>
+              <li className={navigate.pathname === "/dashboard" && "menu_active"}>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => setNavChildOpen(!navChildOpen)}>
@@ -44,8 +46,8 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   <img src={downArrow} alt="img" className={navChildOpen ? 'menu-has-child-button-active' : ''} />
                 </Link>
                 <ul className={navChildOpen ? 'menu-has-child-open' : ''}>
-                  <li>
-                    <NavLink to="/create-event">Create Events</NavLink>
+                  <li className={navigate.pathname === "/create-event" && "menu_active"}>
+                    <Link to="/create-event">Create Events</Link>
                   </li>
                   <li>
                     <Link to="">Draft</Link>
