@@ -109,8 +109,8 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   <li className={navigate.pathname === '/users-roles' && 'menu_active'}>
                     <Link to="/users-roles">Users and Roles</Link>
                   </li>
-                  <li>
-                    <Link to="">Password</Link>
+                  <li className={navigate.pathname === '/users-passwords' && 'menu_active'}>
+                    <Link to="/users-passwords">Password</Link>
                   </li>
                 </ul>
               </li>
