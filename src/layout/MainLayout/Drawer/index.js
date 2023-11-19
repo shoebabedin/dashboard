@@ -64,7 +64,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                     <Link to="/create-event">Create Events</Link>
                   </li>
                   <li>
-                    <Link to="">Draft</Link>
+                    <Link to="/create-draft">Draft</Link>
                   </li>
                   <li>
                     <Link to="">Submitted for Review</Link>

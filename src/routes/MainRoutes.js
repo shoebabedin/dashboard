@@ -11,6 +11,7 @@ const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')))
 // const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
 
 const CreateEvent = Loadable(lazy(() => import('pages/CreateEvent/CreateEvent')));
+const CreateDraft = Loadable(lazy(() => import('pages/CreateEvent/CreateDraft')));
 const SettingsUser = Loadable(lazy(() => import('pages/SettingsUser/SettingsUser')));
 const Password = Loadable(lazy(() => import('pages/SettingsUser/Password')));
 
@@ -134,17 +135,11 @@ const MainRoutes = {
         },
         {
           path: 'create-event',
-          element: <CreateEvent />,
-          children: [
-            {
-              path: 'data',
-              element: <WidgetData />
-            },
-            {
-              path: 'chart',
-              element: <WidgetChart />
-            }
-          ]
+          element: <CreateEvent />
+        },
+        {
+          path: 'create-draft',
+          element: <CreateDraft />
         },
         {
           path: 'users-roles',
