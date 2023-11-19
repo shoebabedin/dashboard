@@ -701,9 +701,9 @@ select {
 .dash_main_table_wrapper {
   width: 100%;
 }
-.artst_table {
+/* .artst_table {
   display: none;
-}
+} */
 .artst_table {
   overflow: hidden;
   width: 100%;
@@ -767,7 +767,7 @@ select {
   padding: 15px 20px;
   min-width: 150px;
   list-style: none;
-  display: none;
+  /* display: none; */
 }
 .dash_main_main_table_add ul li ul li {
   float: none;
@@ -791,4 +791,454 @@ select {
 }
 .dash_main_main_table_add ul li ul li a:hover {
   color: #0b79bf;
+}
+.single_preview_section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+}
+.Preview_content_wrapper .single_preview_section:last-child {
+  border-bottom: 0 solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.Preview_content_wrapper .artst_table {
+  display: block;
+}
+.Preview_content_wrapper .dash_main_table_wrapper table tr:last-child td {
+  border-bottom-width: 0;
+  padding-bottom: 0;
+}
+.single_preview_section_title {
+  margin-bottom: 22px;
+}
+.single_preview_section_title h2 {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 131%; /* 20.96px */
+}
+.event_page_summary_des h6,
+.event_page_summary_des h5,
+.event_page_summary_des h4,
+.event_page_summary_des h3,
+.event_page_summary_des h2 {
+  color: #000;
+  font-family: Gilroy;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px; /* 135% */
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+.event_page_summary_des p {
+  color: #666;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
+}
+.dash_preview_imgs {
+}
+.dash_preview_imgs .row {
+  margin: -7.5px;
+}
+.dash_preview_imgs .row > div {
+  padding: 7.5px;
+}
+.dash_preview_img {
+}
+.dash_preview_img img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.single_preview_event_information_wrapper_single {
+}
+.single_preview_event_information_wrapper_single h3 {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px; /* 128.571% */
+  margin-bottom: 12px;
+}
+.single_preview_event_information_wrapper_single h4 {
+  color: #666;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+}
+.single_preview_event_information_wrapper {
+}
+.single_preview_event_information_wrapper .row {
+  margin: -15px -8px;
+}
+.single_preview_event_information_wrapper .row > div {
+  padding: 15px 8px;
+}
+.preview_timedate_location_single table {
+  width: 100%;
+  table-layout: fixed;
+}
+.preview_timedate_location_single .single_input_box label {
+  margin-bottom: 17px;
+}
+
+.preview_timedate_location_single {
+  margin-bottom: 25px;
+}
+.preview_timedate_location_single table tr td {
+  border-bottom: 1px dashed #cccccc;
+  padding: 15px 9px;
+  vertical-align: middle;
+  color: #666;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px; /* 157.143% */
+  text-align: center;
+  width: 33%;
+}
+.preview_timedate_location_single table tr td:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+.preview_timedate_location_single table tr td:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+.preview_timedate_location_single table tr:first-child td {
+  padding-top: 0;
+}
+.preview_timedate_location_single table tr:last-child td {
+  padding-bottom: 0;
+  border-width: 0;
+}
+.dash_content_main_center_with_padding {
+  padding: 36px 0;
+}
+.dash_events_list_wrapper .row {
+  margin: -15px;
+}
+.dash_events_list_wrapper .row > div {
+  padding: 15px;
+}
+.dash_events_list_single {
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 7px 25px 0px rgba(0, 0, 0, 0.09);
+}
+.dash_events_list_single_img {
+}
+.dash_events_list_single_img img {
+  width: 100%;
+  height: auto;
+}
+.dash_events_list_single_details {
+  padding: 18px 20px 20px 20px;
+}
+.dash_events_list_single_details_title {
+  margin-bottom: 9px;
+}
+.dash_events_list_single_details_title h2 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px; /* 137.5% */
+}
+.dash_events_list_single_details_center {
+}
+.dash_events_list_single_details_center span {
+  font-weight: 700;
+  color: #000;
+}
+.dash_events_list_single_details_center {
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.dash_events_list_single_details_action {
+  margin-top: 18px;
+}
+.dash_events_list_single_details_action ul {
+  list-style: none;
+}
+.dash_events_list_single_details_action ul li {
+  width: calc(50% - 3px);
+  float: left;
+}
+.dash_events_list_single_details_action ul li:first-child {
+  margin-right: 3px;
+}
+.dash_events_list_single_details_action ul li:last-child {
+  margin-left: 3px;
+}
+.dash_events_list_single_details_action ul li a.eventlist_remove_btn {
+  background: #ff0000;
+}
+.dash_events_list_single_details_action ul li a {
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), #0b79bf;
+  color: #fff;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  padding: 7px;
+}
+.dash_events_list_single_details_action ul li a:hover {
+  opacity: 0.6;
+}
+.form_left_col_anchor {
+}
+.form_left_col_anchor ul {
+  list-style: none;
+}
+.form_left_col_anchor ul li {
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 16px;
+}
+.form_left_col_anchor ul li:before {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  top: 6.5px;
+  left: 0;
+  background: #d9d9d9;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+.form_left_col_anchor ul li.current:before {
+  background: #0b79bf;
+}
+.form_left_col_anchor ul li:last-child {
+  margin-bottom: 0;
+}
+.form_left_col_anchor ul li.current a {
+  color: #0b79bf;
+}
+.form_left_col_anchor ul li a {
+  color: #000;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px; /* 128.571% */
+}
+.form_left_col_anchor ul li a:hover {
+  opacity: 0.6;
+}
+.single_input_box_des {
+  margin-top: 10px;
+}
+.single_input_box_des p {
+  color: #666;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%; /* 150% */
+}
+.single_input_box_withupload input[type='text'] {
+  width: calc(65% - 12px);
+  float: left;
+}
+.single_input_box_withupload .dash_main_main_table_form_up {
+  width: 35%;
+  float: right;
+}
+.dash_content_main_bottom_inside {
+  position: relative;
+  border-width: 0;
+  margin-left: -50px;
+  margin-right: -30px;
+}
+.dash_content_main_bottom_inside:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.bankaccountdetails_wrapper {
+}
+.bankaccountdetails_wrapper .row {
+  margin: -5.5px;
+}
+.bankaccountdetails_wrapper .row > div {
+  padding: 5.5px;
+}
+.single_bankaccountdetails {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 7px 22px 7px 7px;
+}
+.single_bankaccountdetails_icon {
+  border-radius: 3px;
+  border: 1px dashed #ccc;
+  background: #fff;
+  width: 46px;
+  height: 46px;
+  position: relative;
+  float: left;
+}
+.single_bankaccountdetails_icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.single_bankaccountdetails_details {
+  float: left;
+  width: calc(100% - 182px);
+  margin-top: 1.5px;
+  padding-left: 13px;
+}
+.single_bankaccountdetails_details h2 {
+  color: #000;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+.single_bankaccountdetails_details h3 {
+  color: #666;
+  font-family: Lato;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 20px; /* 153.846% */
+  margin-top: 3px;
+}
+.single_bankaccountdetails_action {
+  float: right;
+  margin-top: 10px;
+}
+.single_bankaccountdetails_action ul {
+  list-style: none;
+}
+.single_bankaccountdetails_action ul li {
+  float: left;
+  margin-right: 20px;
+}
+.single_bankaccountdetails_action ul li:last-child {
+  margin-right: 0;
+}
+.single_bankaccountdetails_action ul li a svg {
+  margin-right: 5px;
+}
+.single_bankaccountdetails_action ul li a svg,
+.single_bankaccountdetails_action ul li a span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.single_bankaccountdetails_action ul li a {
+  color: #000;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px; /* 121.429% */
+}
+.single_bankaccountdetails_action ul li a.single_bankaccountdetails_action_remove {
+  color: #ff0000;
+}
+.single_bankaccountdetails_action ul li a:hover {
+  opacity: 0.6;
+}
+.single_bankaccountdetails_add {
+  text-align: right;
+}
+.single_bankaccountdetails_add a {
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), #0b79bf;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 15px 7px;
+}
+.single_bankaccountdetails_add a:hover {
+  opacity: 0.6;
+}
+.settings_ser_table {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+}
+.settings_ser_table table {
+  width: 100%;
+}
+.settings_ser_table table tr th {
+  color: #000;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 18px; /* 128.571% */
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px;
+}
+.settings_ser_table table tr th:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+.settings_ser_table table tr th:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+.settings_ser_table table tr td {
+  color: #666;
+  text-align: center;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  text-align: center;
+  padding: 18px 12px;
+  border-bottom: 1px dashed #ccc;
+}
+.settings_ser_table table tr:last-child td {
+  border-width: 0;
+}
+.settings_ser_table table tr td:first-child {
+  text-align: left;
+  font-weight: 600;
+  padding-left: 0;
+}
+.settings_ser_table table tr td.action {
+  text-align: right;
+  padding-right: 0;
+}
+.settings_ser_table .single_bankaccountdetails_action {
+  margin-top: 0;
+}
+.addnewuserpage {
+  width: 100%;
+  max-width: 445px;
+}
+.addnewuserpage_btn {
+}
+.addnewuserpage_btn {
+  padding-top: 20px;
+  margin-top: 36px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.addnewuserpage_btn a {
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), #0b79bf;
+  color: #fff;
+  display: block;
+  padding: 9px 22px 10px;
+  float: right;
+  text-align: center;
+  min-width: 110px;
+}
+.addnewuserpage_btn a:hover {
+  opacity: 0.6;
 }

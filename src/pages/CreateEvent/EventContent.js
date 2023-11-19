@@ -1,8 +1,11 @@
-import React from 'react';
+import { Editor } from '@tinymce/tinymce-react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import profile from "./../../assets/images/images/simg.png"
+import profile from './../../assets/images/images/simg.png';
 
 const EventContent = () => {
+  const editorRef = useRef(null);
+  const [addArtist, setAddArtist] = useState(false);
   return (
     <>
       <div className="form_box_area_main event_information_form oflow-hd">
@@ -40,7 +43,43 @@ const EventContent = () => {
               <div className="single_input_box">
                 <label htmlFor="#">Event Summary</label>
                 <div className="single_input_box_editor">
-                  <textarea></textarea>
+                  {/* <textarea></textarea> */}
+                  <Editor
+                    onInit={(evt, editor) => (editorRef.current = editor)}
+                    init={{
+                      selector: 'textarea',
+                      placeholder: 'Write here....',
+                      height: 300,
+                      menubar: false,
+                      plugins: [
+                        'advlist',
+                        'autolink',
+                        'lists',
+                        'link',
+                        'image',
+                        'charmap',
+                        'preview',
+                        'anchor',
+                        'searchreplace',
+                        'visualblocks',
+                        'code',
+                        'fullscreen',
+                        'insertdatetime',
+                        'media',
+                        'table',
+                        'code',
+                        'help',
+                        'wordcount'
+                      ],
+
+                      toolbar: 'bold italic underline | alignleft aligncenter | ',
+                      table_toolbar:
+                        'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
+                      toolbar_mode: 'wrap' | 'scrolling',
+                      toolbar_sticky: true,
+                      toolbar_sticky_offset: 100
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -73,45 +112,49 @@ const EventContent = () => {
                   </div>
                   <div className="dash_main_main_table_empty">No artist added yet</div>
                   <div className="dash_main_main_table_add oflow-hd">
-                    <ul>
-                      <li>
-                        <Link className="addMoreArtist" to="#!">
-                          Add Artist +
-                        </Link>
-                      </li>
-                    </ul>
-                    <div className="dash_main_main_table_form oflow-hd">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Name" />
+                    {!addArtist && (
+                      <ul>
+                        <li>
+                          <Link className="addMoreArtist" to="#!" onClick={() => setAddArtist(true)}>
+                            Add Artist +
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                    {addArtist && (
+                      <div className="dash_main_main_table_form oflow-hd">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Name" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Sponsor Type" />
+                          <div className="col-md-6">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Sponsor Type" />
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="col-12">
-                          <div className="dash_main_main_table_form_up">
-                            <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                          <div className="col-12">
+                            <div className="dash_main_main_table_form_up">
+                              <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-12">
-                          <div className="dash_main_main_table_form_action">
-                            <ul>
-                              <li>
-                                <Link to="#!">Cancel</Link>
-                              </li>
-                              <li>
-                                <Link to="#!">Add</Link>
-                              </li>
-                            </ul>
+                          <div className="col-12">
+                            <div className="dash_main_main_table_form_action">
+                              <ul>
+                                <li>
+                                  <Link to="#!">Cancel</Link>
+                                </li>
+                                <li>
+                                  <Link to="#!">Add</Link>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>

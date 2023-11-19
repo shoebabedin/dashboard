@@ -1,6 +1,8 @@
-import React from 'react';
+import { Editor } from '@tinymce/tinymce-react';
+import { useRef } from 'react';
 
 const EventTermsCondition = () => {
+  const editorRef = useRef(null);
   return (
     <>
       <div className="form_box_area_main event_information_form oflow-hd">
@@ -12,7 +14,43 @@ const EventTermsCondition = () => {
             <div className="col-12">
               <div className="single_input_box">
                 <div className="single_input_box_editor">
-                  <textarea></textarea>
+                  {/* <textarea></textarea> */}
+                  <Editor
+                    onInit={(evt, editor) => (editorRef.current = editor)}
+                    init={{
+                      selector: 'textarea',
+                      placeholder: 'Write here....',
+                      height: 300,
+                      menubar: false,
+                      plugins: [
+                        'advlist',
+                        'autolink',
+                        'lists',
+                        'link',
+                        'image',
+                        'charmap',
+                        'preview',
+                        'anchor',
+                        'searchreplace',
+                        'visualblocks',
+                        'code',
+                        'fullscreen',
+                        'insertdatetime',
+                        'media',
+                        'table',
+                        'code',
+                        'help',
+                        'wordcount'
+                      ],
+
+                      toolbar: 'bold italic underline | alignleft aligncenter | ',
+                      table_toolbar:
+                        'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
+                      toolbar_mode: 'wrap' | 'scrolling',
+                      toolbar_sticky: true,
+                      toolbar_sticky_offset: 100
+                    }}
+                  />
                 </div>
               </div>
             </div>

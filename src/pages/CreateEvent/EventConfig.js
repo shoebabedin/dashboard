@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import profile from './../../assets/images/images/timg.png';
 
 const EventConfig = () => {
   const [addArtist, setAddArtist] = useState(false);
   const [numberOfDays, setNumberOfDays] = useState([1]);
   const [isEditing, setIsEditing] = useState(false);
+  const [newAddArtist, setNewAddArtist] = useState(false);
+  const [addArtistForm, setAddArtistForm] = useState(false);
+  const [newAddArtist2, setNewAddArtist2] = useState(false);
   const [venue, setVenue] = useState('');
+  const [artist, setArtist] = useState('');
 
   useEffect(() => {
     window.localStorage.setItem('numberOfDays', numberOfDays);
@@ -19,7 +24,7 @@ const EventConfig = () => {
   const handleEditToggle = () => {
     setIsEditing((prevIsEditing) => !prevIsEditing);
   };
-  console.log(venue);
+
   return (
     <>
       {/* <!-- Step 1 --> */}
@@ -175,7 +180,7 @@ const EventConfig = () => {
                             {isEditing ? (
                               <input className={`canedit`} type="text" placeholder="Day 1" />
                             ) : (
-                              <input className={`canedit  disabled`} type="text" value={`Day ${day}`} placeholder="Day 1" />
+                              <input className={`canedit  disabled`} type="text" value={`Day ${day}`} placeholder={`Day ${day}`} />
                             )}
                             <svg
                               onClick={handleEditToggle}
@@ -281,7 +286,7 @@ const EventConfig = () => {
                         <div className="row multifieldrow">
                           <div className="col-md-4">
                             <div className="single_input_box">
-                              <input type="text" value="Day 1" placeholder="Day 2" />
+                              <input type="text" value={`Day ${day}`} placeholder={`Day ${day}`} />
                             </div>
                           </div>
                           <div className="col-md-4">
@@ -297,25 +302,6 @@ const EventConfig = () => {
                         </div>
                       </div>
                     ))}
-                    {/* <div className="multifieldrow_wrapper_single">
-                      <div className="row multifieldrow">
-                        <div className="col-md-4">
-                          <div className="single_input_box">
-                            <input type="text" value="Day 2" placeholder="Day 2" />
-                          </div>
-                        </div>
-                        <div className="col-md-4">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Location" />
-                          </div>
-                        </div>
-                        <div className="col-md-4">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Venue" />
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 )}
               </div>
@@ -326,7 +312,13 @@ const EventConfig = () => {
                 <div className="single_input_box_rado ec_sameartisitornot">
                   <ul>
                     <li>
-                      <input type="radio" name="ec_sameartisitornot" id="YesSame" value="YesSame" />
+                      <input
+                        type="radio"
+                        name="ec_sameartisitornot"
+                        id="YesSame"
+                        value="YesSame"
+                        onClick={(e) => setArtist(e.target.value)}
+                      />
                       <label htmlFor="YesSame">
                         Yes, Same
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -338,7 +330,13 @@ const EventConfig = () => {
                       </label>
                     </li>
                     <li>
-                      <input type="radio" name="ec_sameartisitornot" id="NoDifferent" value="NoDifferent" />
+                      <input
+                        type="radio"
+                        name="ec_sameartisitornot"
+                        id="NoDifferent"
+                        value="NoDifferent"
+                        onClick={(e) => setArtist(e.target.value)}
+                      />
                       <label htmlFor="NoDifferent">
                         No, Different
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -351,80 +349,8 @@ const EventConfig = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="artst_table artst_table1">
-                  <div className="dash_main_table_wrapper">
-                    <div className="dash_main_main_table oflow-hd">
-                      <table>
-                        <tr>
-                          <th>Name</th>
-                          <th>Short Description</th>
-                          <th>Profession</th>
-                          <th>Organization</th>
-                          <th>Action</th>
-                        </tr>
-                      </table>
-                    </div>
-                    <div className="dash_main_main_table_empty">No artist added yet</div>
-                    <div className="dash_main_main_table_add oflow-hd">
-                      <ul>
-                        <li>
-                          <Link className="addMoreArtist" to="#!">
-                            Add Artist +
-                          </Link>
-                        </li>
-                      </ul>
-                      <div className="dash_main_main_table_form oflow-hd">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="single_input_box">
-                              <input type="text" value="" placeholder="Name" />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="single_input_box">
-                              <input type="text" value="" placeholder="URL" />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="single_input_box">
-                              <input type="text" value="" placeholder="Profession / Position" />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="single_input_box">
-                              <input type="text" value="" placeholder="Organization" />
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="single_input_box">
-                              <textarea placeholder="Short Description"></textarea>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="dash_main_main_table_form_up">
-                              <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="dash_main_main_table_form_action">
-                              <ul>
-                                <li>
-                                  <Link to="#!">Cancel</Link>
-                                </li>
-                                <li>
-                                  <Link to="#!">Add</Link>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="artst_table artst_table2">
-                  <div className="artst_table2_single">
-                    <h2>Day 1</h2>
+                {artist === 'YesSame' && (
+                  <div className="artst_table artst_table1">
                     <div className="dash_main_table_wrapper">
                       <div className="dash_main_main_table oflow-hd">
                         <table>
@@ -434,176 +360,278 @@ const EventConfig = () => {
                             <th>Profession</th>
                             <th>Organization</th>
                             <th>Action</th>
-                          </tr>
-                          <tr>
-                            <td>
-                              <img src="images/timg.png" alt="img" />
-                              <span>Fuad Hossain</span>
-                            </td>
-                            <td>
-                              <p>Velit urna at feugiat volutpat quis vitae sit...</p>
-                            </td>
-                            <td>Musician</td>
-                            <td>Coca Cola</td>
-                            <td>
-                              <Link to="#">Edit</Link>
-                              <Link className="remove" to="#">
-                                Delete
-                              </Link>
-                            </td>
                           </tr>
                         </table>
                       </div>
                       <div className="dash_main_main_table_empty">No artist added yet</div>
                       <div className="dash_main_main_table_add oflow-hd">
-                        <ul>
-                          <li>
-                            <Link className="addMoreArtist" to="#!">
-                              Add Artist +
-                            </Link>
-                          </li>
-                        </ul>
-                        <div className="dash_main_main_table_form oflow-hd">
-                          <div className="row">
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="Name" />
+                        {!newAddArtist && (
+                          <ul>
+                            <li>
+                              <Link className="addMoreArtist" to="#!" onClick={() => setNewAddArtist(true)}>
+                                Add Artist +
+                              </Link>
+                            </li>
+                          </ul>
+                        )}
+                        {newAddArtist && (
+                          <div className="dash_main_main_table_form oflow-hd">
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="single_input_box">
+                                  <input type="text" value="" placeholder="Name" />
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="URL" />
+                              <div className="col-md-6">
+                                <div className="single_input_box">
+                                  <input type="text" value="" placeholder="URL" />
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="Profession / Position" />
+                              <div className="col-md-6">
+                                <div className="single_input_box">
+                                  <input type="text" value="" placeholder="Profession / Position" />
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="Organization" />
+                              <div className="col-md-6">
+                                <div className="single_input_box">
+                                  <input type="text" value="" placeholder="Organization" />
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-12">
-                              <div className="single_input_box">
-                                <textarea placeholder="Short Description"></textarea>
+                              <div className="col-12">
+                                <div className="single_input_box">
+                                  <textarea placeholder="Short Description"></textarea>
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-12">
-                              <div className="dash_main_main_table_form_up">
-                                <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                              <div className="col-12">
+                                <div className="dash_main_main_table_form_up">
+                                  <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-12">
-                              <div className="dash_main_main_table_form_action">
-                                <ul>
-                                  <li>
-                                    <Link to="#!">Cancel</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#!">Add</Link>
-                                  </li>
-                                </ul>
+                              <div className="col-12">
+                                <div className="dash_main_main_table_form_action">
+                                  <ul>
+                                    <li>
+                                      <Link to="#!" onClick={() => setNewAddArtist(false)}>
+                                        Cancel
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link to="#!">Add</Link>
+                                    </li>
+                                  </ul>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>
-                  <div className="artst_table2_single">
-                    <h2>Day 2</h2>
-                    <div className="dash_main_table_wrapper">
-                      <div className="dash_main_main_table oflow-hd">
-                        <table>
-                          <tr>
-                            <th>Name</th>
-                            <th>Short Description</th>
-                            <th>Profession</th>
-                            <th>Organization</th>
-                            <th>Action</th>
-                          </tr>
-                        </table>
-                      </div>
-                      <div className="dash_main_main_table_empty">No artist added yet</div>
-                      <div className="dash_main_main_table_add">
-                        <ul>
-                          <li>
-                            <Link className="addArtistFrom" to="#!">
-                              Add From +
-                            </Link>
+                )}
+                {artist === 'NoDifferent' && (
+                  <div className="artst_table artst_table2">
+                    <div className="artst_table2_single">
+                      <h2>Day 1</h2>
+                      <div className="dash_main_table_wrapper">
+                        <div className="dash_main_main_table oflow-hd">
+                          <table>
+                            <tr>
+                              <th>Name</th>
+                              <th>Short Description</th>
+                              <th>Profession</th>
+                              <th>Organization</th>
+                              <th>Action</th>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img src={profile} alt="img" />
+                                <span>Fuad Hossain</span>
+                              </td>
+                              <td>
+                                <p>Velit urna at feugiat volutpat quis vitae sit...</p>
+                              </td>
+                              <td>Musician</td>
+                              <td>Coca Cola</td>
+                              <td>
+                                <Link to="#">Edit</Link>
+                                <Link className="remove" to="#">
+                                  Delete
+                                </Link>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div className="dash_main_main_table_empty">No artist added yet</div>
+                        <div className="dash_main_main_table_add oflow-hd">
+                          {!newAddArtist && (
                             <ul>
                               <li>
-                                <Link to="#">Day 1</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Day 2</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Day 3</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Day 4</Link>
+                                <Link className="addMoreArtist" to="#!" onClick={() => setNewAddArtist(true)}>
+                                  Add Artist +
+                                </Link>
                               </li>
                             </ul>
-                          </li>
-                          <li>
-                            <Link className="addMoreArtist" to="#!">
-                              Add Artist +
-                            </Link>
-                          </li>
-                        </ul>
-                        <div className="dash_main_main_table_form oflow-hd">
-                          <div className="row">
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="Name" />
+                          )}
+                          {newAddArtist && (
+                            <div className="dash_main_main_table_form oflow-hd">
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="Name" />
+                                  </div>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="URL" />
+                                  </div>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="Profession / Position" />
+                                  </div>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="Organization" />
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <div className="single_input_box">
+                                    <textarea placeholder="Short Description"></textarea>
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <div className="dash_main_main_table_form_up">
+                                    <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <div className="dash_main_main_table_form_action">
+                                    <ul>
+                                      <li>
+                                        <Link to="#!">Cancel</Link>
+                                      </li>
+                                      <li>
+                                        <Link to="#!">Add</Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="URL" />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="artst_table2_single">
+                      <h2>Day 2</h2>
+                      <div className="dash_main_table_wrapper">
+                        <div className="dash_main_main_table oflow-hd">
+                          <table>
+                            <tr>
+                              <th>Name</th>
+                              <th>Short Description</th>
+                              <th>Profession</th>
+                              <th>Organization</th>
+                              <th>Action</th>
+                            </tr>
+                          </table>
+                        </div>
+                        <div className="dash_main_main_table_empty">No artist added yet</div>
+                        <div className="dash_main_main_table_add">
+                          {!newAddArtist2 && (
+                            <ul>
+                              <li>
+                                <Link className="addArtistFrom" to="#!" onClick={() => setAddArtistForm(true)}>
+                                  Add From +
+                                </Link>
+                                {addArtistForm && (
+                                  <ul>
+                                    <li>
+                                      <Link to="#" onClick={() => setAddArtistForm(false)}>
+                                        Day 1
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link to="#" onClick={() => setAddArtistForm(false)}>
+                                        Day 2
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link to="#" onClick={() => setAddArtistForm(false)}>
+                                        Day 3
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link to="#" onClick={() => setAddArtistForm(false)}>
+                                        Day 4
+                                      </Link>
+                                    </li>
+                                  </ul>
+                                )}
+                              </li>
+                              <li>
+                                <Link className="addMoreArtist" to="#!" onClick={() => setNewAddArtist2(true)}>
+                                  Add Artist +
+                                </Link>
+                              </li>
+                            </ul>
+                          )}
+                          {newAddArtist2 && (
+                            <div className="dash_main_main_table_form oflow-hd">
+                              <div className="row">
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="Name" />
+                                  </div>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="URL" />
+                                  </div>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="Profession / Position" />
+                                  </div>
+                                </div>
+                                <div className="col-md-6">
+                                  <div className="single_input_box">
+                                    <input type="text" value="" placeholder="Organization" />
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <div className="single_input_box">
+                                    <textarea placeholder="Short Description"></textarea>
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <div className="dash_main_main_table_form_up">
+                                    <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <div className="dash_main_main_table_form_action">
+                                    <ul>
+                                      <li>
+                                        <Link to="#!" onClick={() => setNewAddArtist2(false)}>
+                                          Cancel
+                                        </Link>
+                                      </li>
+                                      <li>
+                                        <Link to="#!">Add</Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="Profession / Position" />
-                              </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="single_input_box">
-                                <input type="text" value="" placeholder="Organization" />
-                              </div>
-                            </div>
-                            <div className="col-12">
-                              <div className="single_input_box">
-                                <textarea placeholder="Short Description"></textarea>
-                              </div>
-                            </div>
-                            <div className="col-12">
-                              <div className="dash_main_main_table_form_up">
-                                <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
-                              </div>
-                            </div>
-                            <div className="col-12">
-                              <div className="dash_main_main_table_form_action">
-                                <ul>
-                                  <li>
-                                    <Link to="#!">Cancel</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#!">Add</Link>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
