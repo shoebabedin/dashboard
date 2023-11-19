@@ -217,6 +217,20 @@ body {
 .dash_content_main_head {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 36px 30px 20px;
+  position: relative;
+}
+.dash_content_main_head a {
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), #0b79bf;
+  color: #fff;
+  display: block;
+  padding: 8px 22px 10px;
+  position: absolute;
+  top: 24px;
+  right: 30px;
+}
+.dash_content_main_head a:hover {
+  opacity: 0.6;
 }
 .dash_content_main_head h2 {
   color: #000;

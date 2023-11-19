@@ -1,9 +1,9 @@
 import { lazy } from 'react';
 
 // project import
-import MainLayout from 'layout/MainLayout';
-import CommonLayout from 'layout/CommonLayout';
 import Loadable from 'components/Loadable';
+import CommonLayout from 'layout/CommonLayout';
+import MainLayout from 'layout/MainLayout';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
@@ -11,6 +11,7 @@ const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')))
 // const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
 
 const CreateEvent = Loadable(lazy(() => import('pages/CreateEvent/CreateEvent')));
+const SettingsUser = Loadable(lazy(() => import('pages/SettingsUser/SettingsUser')));
 
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
@@ -133,6 +134,20 @@ const MainRoutes = {
         {
           path: 'create-event',
           element: <CreateEvent />,
+          children: [
+            {
+              path: 'data',
+              element: <WidgetData />
+            },
+            {
+              path: 'chart',
+              element: <WidgetChart />
+            }
+          ]
+        },
+        {
+          path: 'users-roles',
+          element: <SettingsUser />,
           children: [
             {
               path: 'data',
