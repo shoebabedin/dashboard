@@ -1,7 +1,24 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const EventConfig = () => {
+  const [addArtist, setAddArtist] = useState(false);
+  const [numberOfDays, setNumberOfDays] = useState([1]);
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    window.localStorage.setItem('numberOfDays', numberOfDays);
+  }, [numberOfDays]);
+
+  const handleAddDays = () => {
+    // Increment the number of days by 1
+    setNumberOfDays((prevDays) => [...prevDays, prevDays.length + 1]);
+  };
+
+  const handleEditToggle = () => {
+    setIsEditing((prevIsEditing) => !prevIsEditing);
+  };
+
   return (
     <>
       {/* <!-- Step 1 --> */}
@@ -70,61 +87,67 @@ const EventConfig = () => {
                   </div>
                   <div className="dash_main_main_table_empty">No artist added yet</div>
                   <div className="dash_main_main_table_add oflow-hd">
-                    <ul>
-                      <li>
-                        <Link className="addMoreArtist" to="#!">
-                          Add Artist +
-                        </Link>
-                      </li>
-                    </ul>
-                    <div className="dash_main_main_table_form oflow-hd">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Name" />
+                    {!addArtist && (
+                      <ul>
+                        <li>
+                          <Link className="addMoreArtist" to="#!" onClick={() => setAddArtist(true)}>
+                            Add Artist +
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                    {addArtist && (
+                      <div className="dash_main_main_table_form oflow-hd">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Name" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="URL" />
+                          <div className="col-md-6">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="URL" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Profession / Position" />
+                          <div className="col-md-6">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Profession / Position" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="single_input_box">
-                            <input type="text" value="" placeholder="Organization" />
+                          <div className="col-md-6">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Organization" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-12">
-                          <div className="single_input_box">
-                            <textarea placeholder="Short Description"></textarea>
+                          <div className="col-12">
+                            <div className="single_input_box">
+                              <textarea placeholder="Short Description"></textarea>
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-12">
-                          <div className="dash_main_main_table_form_up">
-                            <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                          <div className="col-12">
+                            <div className="dash_main_main_table_form_up">
+                              <input type="file" id="avatar" name="cf_photo" accept="image/png, image/jpeg" />
+                            </div>
                           </div>
-                        </div>
-                        <div className="col-12">
-                          <div className="dash_main_main_table_form_action">
-                            <ul>
+                          <div className="col-12">
+                            <div className="dash_main_main_table_form_action">
                               <ul>
-                                <li>
-                                  <Link to="#!">Cancel</Link>
-                                </li>
-                                <li>
-                                  <Link to="#!">Add</Link>
-                                </li>
+                                <ul>
+                                  <li>
+                                    <Link to="#!" onClick={() => setAddArtist(false)}>
+                                      Cancel
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link to="#!">Add</Link>
+                                  </li>
+                                </ul>
                               </ul>
-                            </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -143,65 +166,52 @@ const EventConfig = () => {
               <div className="single_input_box">
                 <label htmlFor="#">Date and Time</label>
                 <div className="multifieldrow_wrapper ec_daydatetimebox">
-                  <div className="multifieldrow_wrapper_single">
-                    <div className="row multifieldrow">
-                      <div className="col-md-4">
-                        <div className="single_input_box single_input_box_canedit">
-                          <input className="canedit" type="text" value="Day 1" placeholder="Day 1" />
-                          <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M14.4966 6.09164L8.56075 12.0275C8.35533 12.2329 8.08616 12.3604 7.79575 12.3887L5.72033 12.58H5.64241C5.40866 12.58 5.182 12.4879 5.01908 12.3179C4.83491 12.1337 4.74283 11.8716 4.76408 11.6096L4.95533 9.53414C4.98366 9.24373 5.11116 8.97456 5.31658 8.76914L11.2382 2.83331L14.4966 6.09164ZM15.8707 1.96206L15.3678 1.45914C15.0018 1.09502 14.5064 0.890625 13.9901 0.890625C13.4738 0.890625 12.9785 1.09502 12.6124 1.45914L11.9891 2.08248L15.2474 5.34081L15.8707 4.71748C16.0522 4.53757 16.1962 4.32351 16.2945 4.08766C16.3928 3.8518 16.4434 3.59882 16.4434 3.34331C16.4434 3.0878 16.3928 2.83481 16.2945 2.59896C16.1962 2.3631 16.0522 2.14905 15.8707 1.96914V1.96206ZM15.0278 13.4654V9.34998C15.0278 9.05956 14.787 8.81873 14.4966 8.81873C14.2062 8.81873 13.9653 9.05956 13.9653 9.34998V13.4654C13.9653 14.3437 13.2499 15.0591 12.3716 15.0591H3.87158C2.99325 15.0591 2.27783 14.3437 2.27783 13.4654V4.95831C2.27783 4.07998 2.99325 3.36456 3.87158 3.36456H7.987C8.27741 3.36456 8.51825 3.12373 8.51825 2.83331C8.51825 2.54289 8.27741 2.30206 7.987 2.30206H3.87158C2.40533 2.30206 1.21533 3.49206 1.21533 4.95831V13.4583C1.21533 14.9246 2.40533 16.1146 3.87158 16.1146H12.3716C13.8378 16.1146 15.0278 14.9246 15.0278 13.4583V13.4654Z"
-                              fill="black"
-                            />
-                          </svg>
+                  {numberOfDays.map((day, index) => (
+                    <div key={index} className="multifieldrow_wrapper_single">
+                      <div className="row multifieldrow">
+                        <div className="col-md-4">
+                          <div className="single_input_box single_input_box_canedit">
+                            {isEditing ? (
+                              <input className={`canedit`} type="text" placeholder="Day 1" />
+                            ) : (
+                              <input className={`canedit  disabled`} type="text" value={`Day ${day}`} placeholder="Day 1" />
+                            )}
+                            <svg
+                              onClick={handleEditToggle}
+                              width="18"
+                              height="17"
+                              viewBox="0 0 18 17"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M14.4966 6.09164L8.56075 12.0275C8.35533 12.2329 8.08616 12.3604 7.79575 12.3887L5.72033 12.58H5.64241C5.40866 12.58 5.182 12.4879 5.01908 12.3179C4.83491 12.1337 4.74283 11.8716 4.76408 11.6096L4.95533 9.53414C4.98366 9.24373 5.11116 8.97456 5.31658 8.76914L11.2382 2.83331L14.4966 6.09164ZM15.8707 1.96206L15.3678 1.45914C15.0018 1.09502 14.5064 0.890625 13.9901 0.890625C13.4738 0.890625 12.9785 1.09502 12.6124 1.45914L11.9891 2.08248L15.2474 5.34081L15.8707 4.71748C16.0522 4.53757 16.1962 4.32351 16.2945 4.08766C16.3928 3.8518 16.4434 3.59882 16.4434 3.34331C16.4434 3.0878 16.3928 2.83481 16.2945 2.59896C16.1962 2.3631 16.0522 2.14905 15.8707 1.96914V1.96206ZM15.0278 13.4654V9.34998C15.0278 9.05956 14.787 8.81873 14.4966 8.81873C14.2062 8.81873 13.9653 9.05956 13.9653 9.34998V13.4654C13.9653 14.3437 13.2499 15.0591 12.3716 15.0591H3.87158C2.99325 15.0591 2.27783 14.3437 2.27783 13.4654V4.95831C2.27783 4.07998 2.99325 3.36456 3.87158 3.36456H7.987C8.27741 3.36456 8.51825 3.12373 8.51825 2.83331C8.51825 2.54289 8.27741 2.30206 7.987 2.30206H3.87158C2.40533 2.30206 1.21533 3.49206 1.21533 4.95831V13.4583C1.21533 14.9246 2.40533 16.1146 3.87158 16.1146H12.3716C13.8378 16.1146 15.0278 14.9246 15.0278 13.4583V13.4654Z"
+                                fill="black"
+                              />
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input className="calendar" type="text" value="" placeholder="Date" />
+                        <div className="col-md-4">
+                          <div className="single_input_box">
+                            <input className="calendar" type="text" value="" placeholder="Date" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input className="time" type="text" value="" placeholder="Time" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="multifieldrow_wrapper_single">
-                    <div className="row multifieldrow">
-                      <div className="col-md-4">
-                        <div className="single_input_box single_input_box_canedit">
-                          <input className="canedit" type="text" value="Day 2" placeholder="Day 2" />
-                          <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M14.4966 6.09164L8.56075 12.0275C8.35533 12.2329 8.08616 12.3604 7.79575 12.3887L5.72033 12.58H5.64241C5.40866 12.58 5.182 12.4879 5.01908 12.3179C4.83491 12.1337 4.74283 11.8716 4.76408 11.6096L4.95533 9.53414C4.98366 9.24373 5.11116 8.97456 5.31658 8.76914L11.2382 2.83331L14.4966 6.09164ZM15.8707 1.96206L15.3678 1.45914C15.0018 1.09502 14.5064 0.890625 13.9901 0.890625C13.4738 0.890625 12.9785 1.09502 12.6124 1.45914L11.9891 2.08248L15.2474 5.34081L15.8707 4.71748C16.0522 4.53757 16.1962 4.32351 16.2945 4.08766C16.3928 3.8518 16.4434 3.59882 16.4434 3.34331C16.4434 3.0878 16.3928 2.83481 16.2945 2.59896C16.1962 2.3631 16.0522 2.14905 15.8707 1.96914V1.96206ZM15.0278 13.4654V9.34998C15.0278 9.05956 14.787 8.81873 14.4966 8.81873C14.2062 8.81873 13.9653 9.05956 13.9653 9.34998V13.4654C13.9653 14.3437 13.2499 15.0591 12.3716 15.0591H3.87158C2.99325 15.0591 2.27783 14.3437 2.27783 13.4654V4.95831C2.27783 4.07998 2.99325 3.36456 3.87158 3.36456H7.987C8.27741 3.36456 8.51825 3.12373 8.51825 2.83331C8.51825 2.54289 8.27741 2.30206 7.987 2.30206H3.87158C2.40533 2.30206 1.21533 3.49206 1.21533 4.95831V13.4583C1.21533 14.9246 2.40533 16.1146 3.87158 16.1146H12.3716C13.8378 16.1146 15.0278 14.9246 15.0278 13.4583V13.4654Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input className="calendar" type="text" value="" placeholder="Date" />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input className="time" type="text" value="" placeholder="Time" />
+                        <div className="col-md-4">
+                          <div className="single_input_box">
+                            <input className="time" type="text" value="" placeholder="Time" />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div className="dash_main_main_table_add oflow-hd">
-                <Link className="addDays" to="#!">
+                <Link className="addDays" to="#!" onClick={handleAddDays}>
                   Add Days +
                 </Link>
               </div>
             </div>
-
             <div className="col-12">
               <div className="single_input_box sameticketordifferent">
                 <label htmlFor="#">Location and Venue will be same?</label>
