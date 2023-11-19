@@ -695,9 +695,9 @@ select {
 .ec_location_venue {
   padding-top: 18px;
 }
-.ec_location_venue {
+/* .ec_location_venue {
   display: none;
-}
+} */
 .dash_main_table_wrapper {
   width: 100%;
 }

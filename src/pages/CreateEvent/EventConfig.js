@@ -5,6 +5,7 @@ const EventConfig = () => {
   const [addArtist, setAddArtist] = useState(false);
   const [numberOfDays, setNumberOfDays] = useState([1]);
   const [isEditing, setIsEditing] = useState(false);
+  const [venue, setVenue] = useState('');
 
   useEffect(() => {
     window.localStorage.setItem('numberOfDays', numberOfDays);
@@ -18,7 +19,7 @@ const EventConfig = () => {
   const handleEditToggle = () => {
     setIsEditing((prevIsEditing) => !prevIsEditing);
   };
-
+  console.log(venue);
   return (
     <>
       {/* <!-- Step 1 --> */}
@@ -218,7 +219,13 @@ const EventConfig = () => {
                 <div className="single_input_box_rado ec_locationvenusameornot">
                   <ul>
                     <li>
-                      <input type="radio" name="ei_locationwilbbesame" id="SingleVenue" value="SingleVenue" />
+                      <input
+                        type="radio"
+                        name="ei_locationwilbbesame"
+                        id="SingleVenue"
+                        value="SingleVenue"
+                        onClick={(e) => setVenue(e.target.value)}
+                      />
                       <label htmlFor="SingleVenue">
                         Single Venue
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,7 +237,13 @@ const EventConfig = () => {
                       </label>
                     </li>
                     <li>
-                      <input type="radio" name="ei_locationwilbbesame" id="MultipleVenue" value="MultipleVenue" />
+                      <input
+                        type="radio"
+                        name="ei_locationwilbbesame"
+                        id="MultipleVenue"
+                        value="MultipleVenue"
+                        onClick={(e) => setVenue(e.target.value)}
+                      />
                       <label htmlFor="MultipleVenue">
                         Multiple Venue
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -243,62 +256,68 @@ const EventConfig = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="multifieldrow_wrapper ec_location_venue ec_location_venue1">
-                  <div className="multifieldrow_wrapper_single">
-                    <div className="row multifieldrow">
-                      <div className="col-md-6">
-                        <div className="single_input_box">
-                          <input type="text" value="" placeholder="Location" />
+                {venue === 'SingleVenue' && (
+                  <div className="multifieldrow_wrapper ec_location_venue ec_location_venue1">
+                    <div className="multifieldrow_wrapper_single">
+                      <div className="row multifieldrow">
+                        <div className="col-md-6">
+                          <div className="single_input_box">
+                            <input type="text" value="" placeholder="Location" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="single_input_box">
-                          <input type="text" value="" placeholder="Venue" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="multifieldrow_wrapper ec_location_venue ec_location_venue2">
-                  <div className="multifieldrow_wrapper_single">
-                    <div className="row multifieldrow">
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input type="text" value="Day 1" placeholder="Day 2" />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input type="text" value="" placeholder="Location" />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input type="text" value="" placeholder="Venue" />
+                        <div className="col-md-6">
+                          <div className="single_input_box">
+                            <input type="text" value="" placeholder="Venue" />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="multifieldrow_wrapper_single">
-                    <div className="row multifieldrow">
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input type="text" value="Day 2" placeholder="Day 2" />
+                )}
+                {venue === 'MultipleVenue' && (
+                  <div className="multifieldrow_wrapper ec_location_venue ec_location_venue2">
+                    {numberOfDays.map((day, index) => (
+                      <div key={index} className="multifieldrow_wrapper_single">
+                        <div className="row multifieldrow">
+                          <div className="col-md-4">
+                            <div className="single_input_box">
+                              <input type="text" value="Day 1" placeholder="Day 2" />
+                            </div>
+                          </div>
+                          <div className="col-md-4">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Location" />
+                            </div>
+                          </div>
+                          <div className="col-md-4">
+                            <div className="single_input_box">
+                              <input type="text" value="" placeholder="Venue" />
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input type="text" value="" placeholder="Location" />
+                    ))}
+                    {/* <div className="multifieldrow_wrapper_single">
+                      <div className="row multifieldrow">
+                        <div className="col-md-4">
+                          <div className="single_input_box">
+                            <input type="text" value="Day 2" placeholder="Day 2" />
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="single_input_box">
+                            <input type="text" value="" placeholder="Location" />
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="single_input_box">
+                            <input type="text" value="" placeholder="Venue" />
+                          </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
-                        <div className="single_input_box">
-                          <input type="text" value="" placeholder="Venue" />
-                        </div>
-                      </div>
-                    </div>
+                    </div> */}
                   </div>
-                </div>
+                )}
               </div>
             </div>
             <div className="col-12">
