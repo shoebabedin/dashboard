@@ -63,11 +63,11 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   <li className={navigate.pathname === '/create-event' && 'menu_active'}>
                     <Link to="/create-event">Create Events</Link>
                   </li>
-                  <li>
+                  <li className={navigate.pathname === '/create-draft' && 'menu_active'}>
                     <Link to="/create-draft">Draft</Link>
                   </li>
-                  <li>
-                    <Link to="">Submitted for Review</Link>
+                  <li className={navigate.pathname === '/create-submitted' && 'menu_active'}>
+                    <Link to="/create-submitted">Submitted for Review</Link>
                   </li>
                 </ul>
               </li>
@@ -97,8 +97,8 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   </li>
                 </ul>
               </li>
-              <li>
-                <Link to="">Company Information</Link>
+              <li className={navigate.pathname === '/company-information' && 'menu_active'}>
+                <Link to="/company-information">Company Information</Link>
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => toggleDropdown('settings')}>

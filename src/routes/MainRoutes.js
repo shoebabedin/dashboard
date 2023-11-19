@@ -10,8 +10,15 @@ import AuthGuard from 'utils/route-guard/AuthGuard';
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')));
 // const DashboardAnalytics = Loadable(lazy(() => import('pages/dashboard/analytics')));
 
+// render - create Event
 const CreateEvent = Loadable(lazy(() => import('pages/CreateEvent/CreateEvent')));
+const SubmitReview = Loadable(lazy(() => import('pages/CreateEvent/SubmitReview')));
 const CreateDraft = Loadable(lazy(() => import('pages/CreateEvent/CreateDraft')));
+
+// render - Company Information
+const CompanyInformation = Loadable(lazy(() => import('pages/CompanyInformation/CompanyInformation')));
+
+// render - Settings user information
 const SettingsUser = Loadable(lazy(() => import('pages/SettingsUser/SettingsUser')));
 const Password = Loadable(lazy(() => import('pages/SettingsUser/Password')));
 
@@ -140,6 +147,14 @@ const MainRoutes = {
         {
           path: 'create-draft',
           element: <CreateDraft />
+        },
+        {
+          path: 'create-submitted',
+          element: <SubmitReview />
+        },
+        {
+          path: 'company-information',
+          element: <CompanyInformation />
         },
         {
           path: 'users-roles',
