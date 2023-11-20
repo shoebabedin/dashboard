@@ -43,9 +43,14 @@ const EventTermsCondition = () => {
                         'wordcount'
                       ],
 
-                      toolbar: 'bold italic underline | alignleft aligncenter | ',
+                      toolbar:
+                        'undo redo | ' +
+                        'styles | bold italic underline forecolor superscript subscript | blockquote | alignleft aligncenter | quicklink  ' +
+                        'alignright alignjustify | bullist numlist outdent indent | table ' +
+                        'removeformat |  link image | formatting quickimage quicktable flipv fliph | editimage imageoptions | hr pagebreak | help ',
                       table_toolbar:
                         'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
+                      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                       toolbar_mode: 'wrap' | 'scrolling',
                       toolbar_sticky: true,
                       toolbar_sticky_offset: 100
