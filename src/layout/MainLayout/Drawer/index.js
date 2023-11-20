@@ -74,7 +74,9 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
               <li
                 className={`${navigate.pathname === '/manage-event' && 'menu_active'} ${
                   navigate.pathname === '/single-event' && 'menu_active'
-                }`}
+                } 
+                ${navigate.pathname === '/pre-registration' && 'menu_active'}
+                ${navigate.pathname === '/create-pre-registration' && 'menu_active'}`}
               >
                 <Link to="/manage-event">Manage Events</Link>
               </li>
