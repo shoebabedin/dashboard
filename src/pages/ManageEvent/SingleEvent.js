@@ -77,7 +77,7 @@ const SingleEvent = () => {
               <div className="row">
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="#">
+                    <Link to="/pre-registration">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path

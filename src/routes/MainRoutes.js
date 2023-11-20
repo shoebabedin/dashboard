@@ -24,6 +24,7 @@ const Password = Loadable(lazy(() => import('pages/SettingsUser/Password')));
 
 const ManageEvent = Loadable(lazy(() => import('pages/ManageEvent/ManageEvent')));
 const SingleEvent = Loadable(lazy(() => import('pages/ManageEvent/SingleEvent')));
+const PreRegistration = Loadable(lazy(() => import('pages/ManageEvent/PreRegistration')));
 
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
@@ -170,6 +171,10 @@ const MainRoutes = {
         {
           path: 'users-roles',
           element: <SettingsUser />
+        },
+        {
+          path: 'pre-registration',
+          element: <PreRegistration />
         },
         {
           path: 'users-passwords',
