@@ -51,10 +51,10 @@ const ManageEvent = () => {
                           <div className="dash_events_list_single_details_action dash_events_list_single_details_action_ManageEvent oflow-hd">
                             <ul>
                               <li>
-                                <Link to="/single-event">Public Preview</Link>
+                                <Link to="#">Public Preview</Link>
                               </li>
                               <li>
-                                <Link to="#">Edit</Link>
+                                <Link to="/single-event">View</Link>
                               </li>
                             </ul>
                           </div>
