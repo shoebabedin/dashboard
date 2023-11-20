@@ -71,8 +71,8 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   </li>
                 </ul>
               </li>
-              <li>
-                <Link to="">Manage Events</Link>
+              <li className={navigate.pathname === '/manage-event' && 'menu_active'}>
+                <Link to="/manage-event">Manage Events</Link>
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => toggleDropdown('tracking')}>

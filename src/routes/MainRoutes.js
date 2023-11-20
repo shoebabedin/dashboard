@@ -22,6 +22,9 @@ const CompanyInformation = Loadable(lazy(() => import('pages/CompanyInformation/
 const SettingsUser = Loadable(lazy(() => import('pages/SettingsUser/SettingsUser')));
 const Password = Loadable(lazy(() => import('pages/SettingsUser/Password')));
 
+const ManageEvent = Loadable(lazy(() => import('pages/ManageEvent/ManageEvent')));
+const SingleEvent = Loadable(lazy(() => import('pages/ManageEvent/SingleEvent')));
+
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
 const WidgetData = Loadable(lazy(() => import('pages/widget/data')));
@@ -155,6 +158,14 @@ const MainRoutes = {
         {
           path: 'company-information',
           element: <CompanyInformation />
+        },
+        {
+          path: 'manage-event',
+          element: <ManageEvent />
+        },
+        {
+          path: 'single-event',
+          element: <SingleEvent />
         },
         {
           path: 'users-roles',

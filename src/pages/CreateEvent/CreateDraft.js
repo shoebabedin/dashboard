@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import banner from './../../assets/images/images/eventimg1.png';
 
 const CreateDraft = () => {
@@ -29,12 +30,12 @@ const CreateDraft = () => {
                           <div className="dash_events_list_single_details_action oflow-hd">
                             <ul>
                               <li>
-                                <a className="eventlist_remove_btn" href="">
+                                <Link className="eventlist_remove_btn" to="#">
                                   Delete
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="">Edit</a>
+                                <Link to="#">Edit</Link>
                               </li>
                             </ul>
                           </div>
