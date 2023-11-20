@@ -1,5 +1,4 @@
-
-const GetManagementTable = ({data}) => {
+const GetManagementTable = () => {
   return (
     <>
       <div className="preregistration_table_data_wrapper preregistration_table_data_gate_manage oflow-hd">
