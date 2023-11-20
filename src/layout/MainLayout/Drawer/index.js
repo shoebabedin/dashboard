@@ -71,7 +71,11 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   </li>
                 </ul>
               </li>
-              <li className={navigate.pathname === '/manage-event' || ('/single-event' && 'menu_active')}>
+              <li
+                className={`${navigate.pathname === '/manage-event' && 'menu_active'} ${
+                  navigate.pathname === '/single-event' && 'menu_active'
+                }`}
+              >
                 <Link to="/manage-event">Manage Events</Link>
               </li>
               <li className="has_dropdown">
