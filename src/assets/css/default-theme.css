@@ -9,7 +9,7 @@ body {
   position: fixed;
   background: #fff;
   height: 100%;
-  z-index: 2;
+  z-index: 5;
   box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.09);
   transition: all 0.2s;
 }
@@ -79,7 +79,7 @@ body {
   position: fixed;
   background: #fff;
   width: 100%;
-  z-index: 1;
+  z-index: 4;
   padding-left: 258px;
   padding-right: 64px;
   padding-top: 18px;
@@ -1781,4 +1781,17 @@ select {
 .single_input_double_label label {
   vertical-align: middle;
   display: inline-block;
+}
+.form_left_col_wthback .backbtnwithtxt {
+  margin-bottom: 25px;
+}
+.preregistration_table_data_gate_manage .preregistration_table_data_wrapper_NOdata {
+  padding: 57px 20px;
+  margin-top: 25px;
+}
+.preregistration_table_data_gate_manage .preregistration_table_data_wrapper_table_details {
+  margin-top: 25px;
+}
+.preregistration_table_data_gate_manage .settings_ser_table table tr td {
+  font-size: 13px;
 }
