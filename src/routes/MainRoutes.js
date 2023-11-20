@@ -28,6 +28,7 @@ const PreRegistration = Loadable(lazy(() => import('pages/ManageEvent/PreRegistr
 const CreatePreRegistration = Loadable(lazy(() => import('pages/ManageEvent/CreatePreRegistration')));
 const EditPreRegistration = Loadable(lazy(() => import('pages/ManageEvent/EditPreRegistration')));
 const GateManagement = Loadable(lazy(() => import('pages/ManageEvent/GateManagement')));
+const SingleEventsPriviliege = Loadable(lazy(() => import('pages/ManageEvent/SingleEventsPriviliege')));
 
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
@@ -190,6 +191,10 @@ const MainRoutes = {
         {
           path: 'gate-management',
           element: <GateManagement />
+        },
+        {
+          path: 'single-events-priviliege',
+          element: <SingleEventsPriviliege />
         },
         {
           path: 'users-passwords',

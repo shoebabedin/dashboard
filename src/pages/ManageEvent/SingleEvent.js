@@ -152,7 +152,7 @@ const SingleEvent = () => {
                 </div>
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="#">
+                    <Link to="/single-events-priviliege">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clipPath="url(#clip0_941_2845)">
