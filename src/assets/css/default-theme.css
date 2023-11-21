@@ -149,7 +149,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px; /* 142.857% */
-  background-image: url(./../images/images/down-arrow.svg);
+  background-image: url(../images/images/down-arrow.svg);
   padding-right: 17px;
   background-repeat: no-repeat;
   background-position: center right;
@@ -386,7 +386,7 @@ body {
 .single_input_box select {
   height: 45px;
   cursor: pointer;
-  background-image: url(./../images/images/down-arrow.svg);
+  background-image: url(../images/images/down-arrow.svg);
   background-repeat: no-repeat;
   background-position: center right 12px;
 }
@@ -484,7 +484,7 @@ select {
   opacity: 0.2;
   transition: all 0.2s;
   cursor: pointer;
-  margin-left: 3px;
+  margin-left: 6px;
 }
 .tooltips:hover {
   opacity: 1;
@@ -499,7 +499,7 @@ select {
   padding: 5px 7.5px !important;
 }
 .calendar {
-  background-image: url(./../images/images/calendar.svg);
+  background-image: url(../images/images/calendar.svg);
   background-repeat: no-repeat;
   background-size: auto 17px;
   background-position: center right 14px;
@@ -507,7 +507,7 @@ select {
   cursor: pointer;
 }
 .time {
-  background-image: url(./../images/images/clock.svg);
+  background-image: url(../images/images/clock.svg);
   background-repeat: no-repeat;
   background-position: center right 14px;
   padding-right: 55px !important;
@@ -1602,7 +1602,7 @@ select {
 .preregistration_table_data_wrapper_table_details_filter_box select {
   height: 45px;
   cursor: pointer;
-  background-image: url(./../images/images/down-arrow.svg);
+  background-image: url(../images/images/down-arrow.svg);
   background-repeat: no-repeat;
   background-position: center right 12px;
 }
@@ -1846,10 +1846,10 @@ select {
   background: transparent;
   transition: all 0.2s;
 }
-.privilege_ticket_add .checkbox_fields {
+.form_inside_tabs_wrapper .checkbox_fields {
   display: none;
 }
-.privilege_ticket_add .checkbox_fields.TabShow {
+.form_inside_tabs_wrapper .checkbox_fields.TabShow {
   display: block;
 }
 .checkbox_fields > h2 {
@@ -1866,6 +1866,12 @@ select {
 .checkbox_fields_wrapper .row > div {
   padding: 9px 10px;
 }
-/* .form_inside_tabs_wrapper {
-  display: none;
-} */
+.form_inside_tabs_wrapper {
+  /* display: none; */
+}
+.dhash_promotionDiscount_wrapper {
+  margin-top: 22px;
+}
+.dhash_promotionDiscount_wrapper .dash_events_list_single_details_center {
+  margin-bottom: 14px;
+}
