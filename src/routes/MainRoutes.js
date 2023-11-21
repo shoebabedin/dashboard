@@ -30,6 +30,7 @@ const EditPreRegistration = Loadable(lazy(() => import('pages/ManageEvent/EditPr
 const GateManagement = Loadable(lazy(() => import('pages/ManageEvent/GateManagement')));
 const SingleEventsPriviliege = Loadable(lazy(() => import('pages/ManageEvent/SingleEventsPriviliege')));
 const PromotionDiscount = Loadable(lazy(() => import('pages/ManageEvent/PromotionDiscount')));
+const SingleEventTicket = Loadable(lazy(() => import('pages/ManageEvent/SingleEventTicket')));
 
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
@@ -200,6 +201,10 @@ const MainRoutes = {
         {
           path: 'promotions-discount',
           element: <PromotionDiscount />
+        },
+        {
+          path: 'ticketing',
+          element: <SingleEventTicket />
         },
         {
           path: 'users-passwords',

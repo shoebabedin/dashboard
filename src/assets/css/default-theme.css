@@ -624,7 +624,7 @@ select {
   text-decoration: underline;
 }
 .dash_main_main_table_form {
-  display: none;
+  /* display: none; */
 }
 .dash_main_main_table_form .row {
   margin: -7.5px;
@@ -702,7 +702,7 @@ select {
   width: 100%;
 }
 .artst_table {
-  display: none;
+  /* display: none; */
 }
 .artst_table {
   overflow: hidden;
@@ -767,7 +767,7 @@ select {
   padding: 15px 20px;
   min-width: 150px;
   list-style: none;
-  display: none;
+  /* display: none; */
 }
 .dash_main_main_table_add ul li ul li {
   float: none;
@@ -1867,11 +1867,32 @@ select {
   padding: 9px 10px;
 }
 .form_inside_tabs_wrapper {
-  /* display: none; */
+  display: none;
 }
 .dhash_promotionDiscount_wrapper {
   margin-top: 22px;
 }
 .dhash_promotionDiscount_wrapper .dash_events_list_single_details_center {
   margin-bottom: 14px;
+}
+.artst_table2_single {
+}
+.artst_table2_single h2 {
+}
+.artst_table2_single h2 ul {
+  list-style: none;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.artst_table2_single h2 ul li {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 18px;
+  padding-right: 18px;
+  float: left;
+}
+.artst_table2_single h2 ul li:last-child {
+  border-right: 0 solid rgba(0, 0, 0, 0.2);
+  margin-right: 0;
+  padding-right: 0;
 }
