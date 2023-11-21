@@ -31,7 +31,7 @@ const SingleEventTicketCreate = () => {
               <div className="form_left_col_progress oflow-hd">
                 <ul>
                   <li className={(step === 1 && 'current') || (step >= 1 && 'checked')}>
-                    <Link to="#" onClick={() => setStep('1')}>
+                    <Link to="#" onClick={() => setStep(1)}>
                       <div>
                         <span>01</span>
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ const SingleEventTicketCreate = () => {
                     </Link>
                   </li>
                   <li className={(step === 2 && 'current') || (step >= 2 && 'checked')}>
-                    <Link to="#" onClick={() => setStep('2')}>
+                    <Link to="#" onClick={() => setStep(2)}>
                       <div>
                         <span>02</span>
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,7 @@ const SingleEventTicketCreate = () => {
                     </Link>
                   </li>
                   <li className={step === 3 && 'current'}>
-                    <Link to="#" onClick={() => setStep('3')}>
+                    <Link to="#" onClick={() => setStep(3)}>
                       <div>
                         <span>03</span>
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
