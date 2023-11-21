@@ -25,7 +25,7 @@ const TicketConfig = () => {
                         name="ec_sameartisitornot"
                         id="YesSame"
                         value="YesSame"
-                        onClick={() => setDifferentTicket(false)}
+                        onClick={() => setDifferentTicket('SameTicket')}
                       />
                       <label htmlFor="YesSame">
                         Same ticket for all event days
@@ -43,7 +43,7 @@ const TicketConfig = () => {
                         name="ec_sameartisitornot"
                         id="NoDifferent"
                         value="NoDifferent"
-                        onClick={() => setDifferentTicket(true)}
+                        onClick={() => setDifferentTicket('DifferentTicket')}
                       />
                       <label htmlFor="NoDifferent">
                         Different tickets for each days
@@ -57,7 +57,7 @@ const TicketConfig = () => {
                     </li>
                   </ul>
                 </div>
-                {!differentTicket && (
+                {differentTicket === 'SameTicket' && (
                   <div className="artst_table artst_table1">
                     <div className="dash_main_table_wrapper">
                       <div className="dash_main_main_table oflow-hd">
@@ -129,7 +129,7 @@ const TicketConfig = () => {
                     </div>
                   </div>
                 )}
-                {differentTicket && (
+                {differentTicket === 'DifferentTicket' && (
                   <div className="artst_table artst_table2">
                     <div className="artst_table2_single">
                       <h2>

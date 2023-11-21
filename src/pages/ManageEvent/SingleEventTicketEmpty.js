@@ -13,7 +13,7 @@ const SingleEventTicketEmpty = ({ setCreateTicket }) => {
                   fill="black"
                 />
               </svg>
-              <span>Pre-Registration</span>
+              <span>Ticketing / Registration</span>
             </Link>
           </div>
           <div className="noitememptybox oflow-hd">
