@@ -16,7 +16,7 @@ const TicketDetails = () => {
   const data = { nodes };
   const theme = useTheme({
     Table: `
-        --data-table-library_grid-template-columns:  250px 150px 25% 25% 50%;
+        --data-table-library_grid-template-columns:  repeat(17, 200px);
       `,
     BaseCell: `
         &:nth-of-type(1) {
@@ -24,7 +24,7 @@ const TicketDetails = () => {
         }
 
         &:nth-of-type(2) {
-          left: 250px;
+          left: 200px;
         }
       `
   });
@@ -79,62 +79,54 @@ const TicketDetails = () => {
               </div>
 
               <div className="preregistration_table_data_wrapper_table oflow-hd">
-                <Table data={data} theme={theme} layout={{ custom: true, horizontalScroll: true, fixedHeader: true }}>
-                  {(tableList) => (
-                    <>
-                      <Header>
-                        <HeaderRow>
-                          <HeaderCell pinLeft>Ticket ID</HeaderCell>
-                          <HeaderCell pinLeft>Name</HeaderCell>
-                          <HeaderCell>Phone</HeaderCell>
-                          <HeaderCell>Email</HeaderCell>
-                          <HeaderCell>NID</HeaderCell>
-                          <HeaderCell>Gender</HeaderCell>
-                          <HeaderCell>Date of Birth</HeaderCell>
-                          <HeaderCell>Day</HeaderCell>
-                          <HeaderCell>Type</HeaderCell>
-                          <HeaderCell>Quantity</HeaderCell>
-                          <HeaderCell>Purchased by - Self/Name of the buyer(Fahim)</HeaderCell>
-                          <HeaderCell>Discount</HeaderCell>
-                          <HeaderCell>Discount type</HeaderCell>
-                          <HeaderCell>Discount Amount</HeaderCell>
-                          <HeaderCell>Payment Amount</HeaderCell>
-                          <HeaderCell>Payment Method</HeaderCell>
-                          <HeaderCell>Ticket Time and Date</HeaderCell>
-                        </HeaderRow>
-                      </Header>
+                <Table theme={theme} layout={{ custom: true, horizontalScroll: true, fixedHeader: true }}>
+                  <>
+                    <Header>
+                      <HeaderRow>
+                        <HeaderCell pinLeft>Ticket ID</HeaderCell>
+                        <HeaderCell pinLeft>Name</HeaderCell>
+                        <HeaderCell>Phone</HeaderCell>
+                        <HeaderCell>Email</HeaderCell>
+                        <HeaderCell>NID</HeaderCell>
+                        <HeaderCell>Gender</HeaderCell>
+                        <HeaderCell>Date of Birth</HeaderCell>
+                        <HeaderCell>Day</HeaderCell>
+                        <HeaderCell>Type</HeaderCell>
+                        <HeaderCell>Quantity</HeaderCell>
+                        <HeaderCell>Purchased by - Self/Name of the buyer(Fahim)</HeaderCell>
+                        <HeaderCell>Discount</HeaderCell>
+                        <HeaderCell>Discount type</HeaderCell>
+                        <HeaderCell>Discount Amount</HeaderCell>
+                        <HeaderCell>Payment Amount</HeaderCell>
+                        <HeaderCell>Payment Method</HeaderCell>
+                        <HeaderCell>Ticket Time and Date</HeaderCell>
+                      </HeaderRow>
+                    </Header>
 
-                      <Body>
-                        {tableList.map((item) => (
-                          <Row key={item.id} item={item}>
-                            <Cell>item.name</Cell>
-                            <Cell>
-                              {item.deadline.toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: '2-digit',
-                                day: '2-digit'
-                              })}
-                            </Cell>
-                            <Cell>{item.type}</Cell>
-                            <Cell>{item.isComplete.toString()}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                            <Cell>{item.nodes?.length}</Cell>
-                          </Row>
-                        ))}
-                      </Body>
-                    </>
-                  )}
+                    <Body>
+                      {[...Array(20)].map((item, i) => (
+                        <Row key={i}>
+                          <Cell pinLeft>01</Cell>
+                          <Cell pinLeft>Fahim</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                          <Cell>Data</Cell>
+                        </Row>
+                      ))}
+                    </Body>
+                  </>
                 </Table>
                 <div className="dy_ser_table"></div>
               </div>
