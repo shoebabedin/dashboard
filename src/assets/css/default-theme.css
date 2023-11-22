@@ -94,6 +94,9 @@ body {
   margin-top: 25px;
   display: none;
 }
+.dash_left_bar_menu ul li ul.menu-has-child-open {
+  display: block;
+}
 .dash_left_bar_menu ul li ul li {
   border-width: 0;
   margin-bottom: 20px;

@@ -147,10 +147,6 @@ const MainRoutes = {
               path: 'default',
               element: <DashboardDefault />
             }
-            // {
-            //   path: 'analytics',
-            //   element: <DashboardAnalytics />
-            // }
           ]
         },
         {
