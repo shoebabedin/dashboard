@@ -34,6 +34,7 @@ const TicketDetails = () => {
   const theme = useTheme({
     Table: `
         --data-table-library_grid-template-columns:  repeat(17, 200px);
+        max-height: 841px;
       `,
     BaseCell: `
         &:nth-of-type(1) {
