@@ -1,6 +1,33 @@
+import { Body, Cell, Header, HeaderCell, HeaderRow, Row, Table } from '@table-library/react-table-library';
+import { useTheme } from '@table-library/react-table-library/theme';
 const { Link } = require('react-router-dom');
+const nodes = [
+  {
+    id: '0',
+    name: 'Shopping List',
+    deadline: new Date(2020, 1, 15),
+    type: 'TASK',
+    isComplete: true,
+    nodes: 13
+  }
+];
 
 const TicketDetails = () => {
+  const data = { nodes };
+  const theme = useTheme({
+    Table: `
+        --data-table-library_grid-template-columns:  250px 150px 25% 25% 50%;
+      `,
+    BaseCell: `
+        &:nth-of-type(1) {
+          left: 0px;
+        }
+
+        &:nth-of-type(2) {
+          left: 250px;
+        }
+      `
+  });
   return (
     <>
       <div className="dash_content_main oflow-hd">
@@ -52,6 +79,63 @@ const TicketDetails = () => {
               </div>
 
               <div className="preregistration_table_data_wrapper_table oflow-hd">
+                <Table data={data} theme={theme} layout={{ custom: true, horizontalScroll: true, fixedHeader: true }}>
+                  {(tableList) => (
+                    <>
+                      <Header>
+                        <HeaderRow>
+                          <HeaderCell pinLeft>Ticket ID</HeaderCell>
+                          <HeaderCell pinLeft>Name</HeaderCell>
+                          <HeaderCell>Phone</HeaderCell>
+                          <HeaderCell>Email</HeaderCell>
+                          <HeaderCell>NID</HeaderCell>
+                          <HeaderCell>Gender</HeaderCell>
+                          <HeaderCell>Date of Birth</HeaderCell>
+                          <HeaderCell>Day</HeaderCell>
+                          <HeaderCell>Type</HeaderCell>
+                          <HeaderCell>Quantity</HeaderCell>
+                          <HeaderCell>Purchased by - Self/Name of the buyer(Fahim)</HeaderCell>
+                          <HeaderCell>Discount</HeaderCell>
+                          <HeaderCell>Discount type</HeaderCell>
+                          <HeaderCell>Discount Amount</HeaderCell>
+                          <HeaderCell>Payment Amount</HeaderCell>
+                          <HeaderCell>Payment Method</HeaderCell>
+                          <HeaderCell>Ticket Time and Date</HeaderCell>
+                        </HeaderRow>
+                      </Header>
+
+                      <Body>
+                        {tableList.map((item) => (
+                          <Row key={item.id} item={item}>
+                            <Cell>item.name</Cell>
+                            <Cell>
+                              {item.deadline.toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: '2-digit',
+                                day: '2-digit'
+                              })}
+                            </Cell>
+                            <Cell>{item.type}</Cell>
+                            <Cell>{item.isComplete.toString()}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                            <Cell>{item.nodes?.length}</Cell>
+                          </Row>
+                        ))}
+                      </Body>
+                    </>
+                  )}
+                </Table>
                 <div className="dy_ser_table"></div>
               </div>
             </div>
