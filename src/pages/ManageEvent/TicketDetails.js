@@ -79,56 +79,59 @@ const TicketDetails = () => {
               </div>
 
               <div className="preregistration_table_data_wrapper_table oflow-hd">
-                <Table theme={theme} layout={{ custom: true, horizontalScroll: true, fixedHeader: true }}>
-                  <>
-                    <Header>
-                      <HeaderRow>
-                        <HeaderCell pinLeft>Ticket ID</HeaderCell>
-                        <HeaderCell pinLeft>Name</HeaderCell>
-                        <HeaderCell>Phone</HeaderCell>
-                        <HeaderCell>Email</HeaderCell>
-                        <HeaderCell>NID</HeaderCell>
-                        <HeaderCell>Gender</HeaderCell>
-                        <HeaderCell>Date of Birth</HeaderCell>
-                        <HeaderCell>Day</HeaderCell>
-                        <HeaderCell>Type</HeaderCell>
-                        <HeaderCell>Quantity</HeaderCell>
-                        <HeaderCell>Purchased by - Self/Name of the buyer(Fahim)</HeaderCell>
-                        <HeaderCell>Discount</HeaderCell>
-                        <HeaderCell>Discount type</HeaderCell>
-                        <HeaderCell>Discount Amount</HeaderCell>
-                        <HeaderCell>Payment Amount</HeaderCell>
-                        <HeaderCell>Payment Method</HeaderCell>
-                        <HeaderCell>Ticket Time and Date</HeaderCell>
-                      </HeaderRow>
-                    </Header>
+                <div className="dy_ser_table">
+                  <Table data={data} theme={theme} layout={{ custom: true, horizontalScroll: true, fixedHeader: true }}>
+                    {(tableList) => (
+                      <>
+                        <Header>
+                          <HeaderRow>
+                            <HeaderCell pinLeft>Ticket ID</HeaderCell>
+                            <HeaderCell pinLeft>Name</HeaderCell>
+                            <HeaderCell>Phone</HeaderCell>
+                            <HeaderCell>Email</HeaderCell>
+                            <HeaderCell>NID</HeaderCell>
+                            <HeaderCell>Gender</HeaderCell>
+                            <HeaderCell>Date of Birth</HeaderCell>
+                            <HeaderCell>Day</HeaderCell>
+                            <HeaderCell>Type</HeaderCell>
+                            <HeaderCell>Quantity</HeaderCell>
+                            <HeaderCell>Purchased by - Self/Name of the buyer(Fahim)</HeaderCell>
+                            <HeaderCell>Discount</HeaderCell>
+                            <HeaderCell>Discount type</HeaderCell>
+                            <HeaderCell>Discount Amount</HeaderCell>
+                            <HeaderCell>Payment Amount</HeaderCell>
+                            <HeaderCell>Payment Method</HeaderCell>
+                            <HeaderCell>Ticket Time and Date</HeaderCell>
+                          </HeaderRow>
+                        </Header>
 
-                    <Body>
-                      {[...Array(20)].map((item, i) => (
-                        <Row key={i}>
-                          <Cell pinLeft>01</Cell>
-                          <Cell pinLeft>Fahim</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                          <Cell>Data</Cell>
-                        </Row>
-                      ))}
-                    </Body>
-                  </>
-                </Table>
-                <div className="dy_ser_table"></div>
+                        <Body>
+                          {[...Array(200)].map((item, i) => (
+                            <Row key={i} item={item}>
+                              <Cell pinLeft>01</Cell>
+                              <Cell pinLeft>Fahim</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                              <Cell>Data</Cell>
+                            </Row>
+                          ))}
+                        </Body>
+                      </>
+                    )}
+                  </Table>
+                </div>
               </div>
             </div>
           </div>
