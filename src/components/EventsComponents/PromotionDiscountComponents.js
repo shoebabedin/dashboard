@@ -28,146 +28,54 @@ const PromotionDiscountComponents = ({ setAddCupon }) => {
           <div className="dhash_promotionDiscount_wrapper">
             <div className="dash_events_list_wrapper">
               <div className="row">
-                <div className="col-md-6 col-lg-4">
-                  <div className="dash_events_list_single oflow-hd">
-                    <div className="dash_events_list_single_img oflow-hd">
-                      <img src={cupon} alt="img" />
-                    </div>
-                    <div className="dash_events_list_single_details oflow-hd">
-                      <div className="dash_events_list_single_details_title oflow-hd">
-                        <h2>Dameer & Fuad Presents SANJOY</h2>
+                {[...Array(3)].map((item, index) => (
+                  <div key={index} className="col-md-6 col-lg-4">
+                    <div className="dash_events_list_single oflow-hd">
+                      <div className="dash_events_list_single_img oflow-hd">
+                        <img src={cupon} alt="img" />
                       </div>
-                      <div className="dash_events_list_single_details_center oflow-hd">
-                        <span>Event:</span> Dameer & Fuad Presents SANJOY
-                      </div>
-                      <div className="dash_events_list_single_details_center_multi oflow-hd">
-                        <div className="row">
-                          <div className="col-6">
-                            <div className="single_event_manage_details_box oflow-hd">
-                              <div className="single_event_manage_details oflow-hd">
-                                <span>Type:</span> Coupon
+                      <div className="dash_events_list_single_details oflow-hd">
+                        <div className="dash_events_list_single_details_title oflow-hd">
+                          <h2>GetOff20</h2>
+                        </div>
+                        <div className="dash_events_list_single_details_center oflow-hd">
+                          <span>Event:</span> Dameer & Fuad Presents SANJOY
+                        </div>
+                        <div className="dash_events_list_single_details_center_multi oflow-hd">
+                          <div className="row">
+                            <div className="col-6">
+                              <div className="single_event_manage_details_box oflow-hd">
+                                <div className="single_event_manage_details oflow-hd">
+                                  <span>Type:</span> Coupon
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="col-6">
-                            <div className="single_event_manage_details_box single_event_manage_details_box_last oflow-hd">
-                              <div className="single_event_manage_details oflow-hd">
-                                <span>Discount:</span> 10% Flat
+                            <div className="col-6">
+                              <div className="single_event_manage_details_box single_event_manage_details_box_last oflow-hd">
+                                <div className="single_event_manage_details oflow-hd">
+                                  <span>Discount:</span> 10% Flat
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="dash_events_list_single_details_action oflow-hd">
-                        <ul>
-                          <li>
-                            <Link className="eventlist_remove_btn" to="#">
-                              Delete
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="#">Edit</Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 col-lg-4">
-                  <div className="dash_events_list_single oflow-hd">
-                    <div className="dash_events_list_single_img oflow-hd">
-                      <img src={cupon} alt="img" />
-                    </div>
-                    <div className="dash_events_list_single_details oflow-hd">
-                      <div className="dash_events_list_single_details_title oflow-hd">
-                        <h2>Dameer & Fuad Presents SANJOY</h2>
-                      </div>
-                      <div className="dash_events_list_single_details_center oflow-hd">
-                        <span>Event:</span> Dameer & Fuad Presents SANJOY
-                      </div>
-                      <div className="dash_events_list_single_details_center_multi oflow-hd">
-                        <div className="row">
-                          <div className="col-6">
-                            <div className="single_event_manage_details_box oflow-hd">
-                              <div className="single_event_manage_details oflow-hd">
-                                <span>Type:</span> Coupon
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-6">
-                            <div className="single_event_manage_details_box single_event_manage_details_box_last oflow-hd">
-                              <div className="single_event_manage_details oflow-hd">
-                                <span>Discount:</span> 10% Flat
-                              </div>
-                            </div>
-                          </div>
+                        <div className="dash_events_list_single_details_action oflow-hd">
+                          <ul>
+                            <li>
+                              <Link className="eventlist_remove_btn" to="#">
+                                Delete
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="#">Edit</Link>
+                            </li>
+                          </ul>
                         </div>
                       </div>
-
-                      <div className="dash_events_list_single_details_action oflow-hd">
-                        <ul>
-                          <li>
-                            <Link className="eventlist_remove_btn" to="#">
-                              Delete
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="#">Edit</Link>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="col-md-6 col-lg-4">
-                  <div className="dash_events_list_single oflow-hd">
-                    <div className="dash_events_list_single_img oflow-hd">
-                      <img src={cupon} alt="img" />
-                    </div>
-                    <div className="dash_events_list_single_details oflow-hd">
-                      <div className="dash_events_list_single_details_title oflow-hd">
-                        <h2>Dameer & Fuad Presents SANJOY</h2>
-                      </div>
-                      <div className="dash_events_list_single_details_center oflow-hd">
-                        <span>Event:</span> Dameer & Fuad Presents SANJOY
-                      </div>
-                      <div className="dash_events_list_single_details_center_multi oflow-hd">
-                        <div className="row">
-                          <div className="col-6">
-                            <div className="single_event_manage_details_box oflow-hd">
-                              <div className="single_event_manage_details oflow-hd">
-                                <span>Type:</span> Coupon
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-6">
-                            <div className="single_event_manage_details_box single_event_manage_details_box_last oflow-hd">
-                              <div className="single_event_manage_details oflow-hd">
-                                <span>Discount:</span> 10% Flat
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="dash_events_list_single_details_action oflow-hd">
-                        <ul>
-                          <li>
-                            <Link className="eventlist_remove_btn" to="#">
-                              Delete
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="#">Edit</Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
