@@ -1,28 +1,36 @@
 import { Body, Cell, Header, HeaderCell, HeaderRow, Row, Table } from '@table-library/react-table-library';
 import { useTheme } from '@table-library/react-table-library/theme';
 const { Link } = require('react-router-dom');
-const generateNodes = (count) => {
+const generateNodes = () => {
   const nodes = [];
 
-  for (let i = 1; i <= count; i++) {
+  const today = new Date();
+
+  for (let i = 0; i < 50; i++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + (i % 30)); // Use modulo to cycle through the 30 days
+
     nodes.push({
-      ticketId: `00${i}`,
-      name: `Person ${i}`,
-      phone: `123-456-789${i}`,
-      email: `person${i}@example.com`,
-      nid: `ABC${i}123`,
-      gender: i % 2 === 0 ? 'Male' : 'Female',
-      dateOfBirth: `199${i}-01-01`,
-      day: `Day ${i}`,
-      type: i % 2 === 0 ? 'VIP' : 'Regular',
-      quantity: (i % 3) + 1,
-      purchasedBy: i % 2 === 0 ? 'Self' : 'Other',
-      discount: i % 3 === 0 ? 'Yes' : 'No',
-      discountType: i % 2 === 0 ? 'Percentage' : 'Fixed',
-      discountAmount: i % 3 === 0 ? 10 : 0,
-      paymentAmount: 100 - i,
-      paymentMethod: i % 2 === 0 ? 'Credit Card' : 'Cash',
-      ticketTimeAndDate: `2023-01-${i < 10 ? '0' + i : i} 12:00 PM`
+      ticketId: `00${i + 1}`,
+      name: `Person ${i + 1}`,
+      phone: `123-456-789${i + 1}`,
+      email: `person${i + 1}@example.com`,
+      nid: `ABC${i + 1}123`,
+      gender: (i + 1) % 2 === 0 ? 'Male' : 'Female',
+      dateOfBirth: `199${i + 1}-01-01`,
+      day: `Day ${(i % 30) + 1}`, // Adjusted to cycle through the 30 days
+      type: (i + 1) % 2 === 0 ? 'VIP' : 'Regular',
+      quantity: ((i + 1) % 3) + 1,
+      purchasedBy: (i + 1) % 2 === 0 ? 'Self' : 'Other',
+      discount: (i + 1) % 3 === 0 ? 'Yes' : 'No',
+      discountType: (i + 1) % 2 === 0 ? 'Percentage' : 'Fixed',
+      discountAmount: (i + 1) % 3 === 0 ? 10 : 0,
+      paymentAmount: 100 - (i + 1),
+      paymentMethod: (i + 1) % 2 === 0 ? 'Credit Card' : 'Cash',
+      ticketTimeAndDate: `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date
+        .getDate()
+        .toString()
+        .padStart(2, '0')} 12:00 PM`
     });
   }
 
