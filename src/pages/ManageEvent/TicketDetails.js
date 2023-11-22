@@ -1,19 +1,36 @@
 import { Body, Cell, Header, HeaderCell, HeaderRow, Row, Table } from '@table-library/react-table-library';
 import { useTheme } from '@table-library/react-table-library/theme';
 const { Link } = require('react-router-dom');
-const nodes = [
-  {
-    id: '0',
-    name: 'Shopping List',
-    deadline: new Date(2020, 1, 15),
-    type: 'TASK',
-    isComplete: true,
-    nodes: 13
+const generateNodes = (count) => {
+  const nodes = [];
+
+  for (let i = 1; i <= count; i++) {
+    nodes.push({
+      ticketId: `00${i}`,
+      name: `Person ${i}`,
+      phone: `123-456-789${i}`,
+      email: `person${i}@example.com`,
+      nid: `ABC${i}123`,
+      gender: i % 2 === 0 ? 'Male' : 'Female',
+      dateOfBirth: `199${i}-01-01`,
+      day: `Day ${i}`,
+      type: i % 2 === 0 ? 'VIP' : 'Regular',
+      quantity: (i % 3) + 1,
+      purchasedBy: i % 2 === 0 ? 'Self' : 'Other',
+      discount: i % 3 === 0 ? 'Yes' : 'No',
+      discountType: i % 2 === 0 ? 'Percentage' : 'Fixed',
+      discountAmount: i % 3 === 0 ? 10 : 0,
+      paymentAmount: 100 - i,
+      paymentMethod: i % 2 === 0 ? 'Credit Card' : 'Cash',
+      ticketTimeAndDate: `2023-01-${i < 10 ? '0' + i : i} 12:00 PM`
+    });
   }
-];
+
+  return nodes;
+};
 
 const TicketDetails = () => {
-  const data = { nodes };
+  const data = { nodes: generateNodes(50) };
   const theme = useTheme({
     Table: `
         --data-table-library_grid-template-columns:  repeat(17, 200px);
@@ -28,6 +45,7 @@ const TicketDetails = () => {
         }
       `
   });
+
   return (
     <>
       <div className="dash_content_main oflow-hd">
@@ -106,25 +124,25 @@ const TicketDetails = () => {
                         </Header>
 
                         <Body>
-                          {[...Array(200)].map((item, i) => (
+                          {tableList.map((item, i) => (
                             <Row key={i} item={item}>
-                              <Cell pinLeft>01</Cell>
-                              <Cell pinLeft>Fahim</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
-                              <Cell>Data</Cell>
+                              <Cell pinLeft>{item.ticketId}</Cell>
+                              <Cell pinLeft>{item.name}</Cell>
+                              <Cell>{item.phone}</Cell>
+                              <Cell>{item.email}</Cell>
+                              <Cell>{item.nid}</Cell>
+                              <Cell>{item.gender}</Cell>
+                              <Cell>{item.dateOfBirth}</Cell>
+                              <Cell>{item.day}</Cell>
+                              <Cell>{item.type}</Cell>
+                              <Cell>{item.quantity}</Cell>
+                              <Cell>{item.purchasedBy}</Cell>
+                              <Cell>{item.discount}</Cell>
+                              <Cell>{item.discountType}</Cell>
+                              <Cell>{item.discountAmount}</Cell>
+                              <Cell>{item.paymentAmount}</Cell>
+                              <Cell>{item.paymentMethod}</Cell>
+                              <Cell>{item.ticketTimeAndDate}</Cell>
                             </Row>
                           ))}
                         </Body>
