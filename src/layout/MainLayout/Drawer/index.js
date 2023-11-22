@@ -86,20 +86,20 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   <img src={downArrow} alt="img" className={dropdownStates.tracking ? 'menu-has-child-button-active' : ''} />
                 </Link>
                 <ul className={dropdownStates.tracking ? 'menu-has-child-open' : ''}>
+                  {/* <li>
+                    <Link to="/ticketing">Create Ticket</Link>
+                  </li> */}
                   <li>
-                    <Link to="">Create Ticket</Link>
+                    <Link to="#">Dashboard</Link>
                   </li>
                   <li>
-                    <Link to="">Dashboard</Link>
+                    <Link to="/ticket-and-registration/tickets">Ticket</Link>
                   </li>
                   <li>
-                    <Link to="">Update Ticket</Link>
+                    <Link to="/ticket-and-registration/promotion-discount">Promotion & Discount</Link>
                   </li>
                   <li>
-                    <Link to="">Promotion & Discount</Link>
-                  </li>
-                  <li>
-                    <Link to="">Privilege Tickets</Link>
+                    <Link to="/ticket-and-registration/priviliege-tickets">Privilege Tickets</Link>
                   </li>
                 </ul>
               </li>

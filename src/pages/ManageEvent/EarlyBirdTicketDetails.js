@@ -78,7 +78,7 @@ const EarlyBirdTicketDetails = () => {
           <div className="dash_content_main_center_with_padding dash_content_main_center_with_paddingticketDatashowMore_head">
             <div className="preregistration_table_data_wrapper oflow-hd">
               <div className="ticketDatashowMore_title">
-                <h2>Ticket Details</h2>
+                <h2>Early Bird Ticket Details</h2>
               </div>
               <div className="preregistration_table_data_wrapper_NOdata oflow-hd">
                 <p>No data to show</p>
@@ -124,7 +124,7 @@ const EarlyBirdTicketDetails = () => {
                             <HeaderCell>Day</HeaderCell>
                             <HeaderCell>Type</HeaderCell>
                             <HeaderCell>Quantity</HeaderCell>
-                            <HeaderCell>Purchased by - Self/Name of the buyer(Fahim)</HeaderCell>
+                            <HeaderCell>Purchased by</HeaderCell>
                             <HeaderCell>Discount</HeaderCell>
                             <HeaderCell>Discount type</HeaderCell>
                             <HeaderCell>Discount Amount</HeaderCell>

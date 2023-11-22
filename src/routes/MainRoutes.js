@@ -35,6 +35,9 @@ const EarlyBirdTicket = Loadable(lazy(() => import('pages/ManageEvent/EarlyBirdT
 const TicketDetails = Loadable(lazy(() => import('pages/ManageEvent/TicketDetails')));
 const EarlyBirdTicketDetails = Loadable(lazy(() => import('pages/ManageEvent/EarlyBirdTicketDetails')));
 
+// Ticketing & Regi8stration
+const TicketReg = Loadable(lazy(() => import('pages/TicketReg/TicketReg')));
+
 // render - widget
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
 const WidgetData = Loadable(lazy(() => import('pages/widget/data')));
@@ -220,6 +223,10 @@ const MainRoutes = {
         {
           path: 'users-passwords',
           element: <Password />
+        },
+        {
+          path: 'ticket-and-registration/:slug',
+          element: <TicketReg />
         },
         {
           path: 'widget',
