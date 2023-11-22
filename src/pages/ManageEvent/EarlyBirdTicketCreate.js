@@ -20,7 +20,7 @@ const EarlyBirdTicketCreate = ({ setCreateTicket }) => {
                       fill="black"
                     />
                   </svg>
-                  <span>Create a Ticket</span>
+                  <span>Create Early Bird Ticket</span>
                 </Link>
               </div>
               <div className="form_left_col_des oflow-hd">

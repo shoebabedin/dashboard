@@ -1,6 +1,8 @@
 import { Body, Cell, Header, HeaderCell, HeaderRow, Row, Table } from '@table-library/react-table-library';
 import { useTheme } from '@table-library/react-table-library/theme';
+import img1 from './../../assets/images/images/timg.png';
 const { Link } = require('react-router-dom');
+
 const generateNodes = () => {
   const nodes = [];
 
@@ -136,7 +138,10 @@ const EarlyBirdTicketDetails = () => {
                           {tableList.map((item, i) => (
                             <Row key={i} item={item}>
                               <Cell pinLeft>{item.ticketId}</Cell>
-                              <Cell pinLeft>{item.name}</Cell>
+                              <Cell pinLeft>
+                                <img src={img1} alt="" />
+                                {item.name}
+                              </Cell>
                               <Cell>{item.phone}</Cell>
                               <Cell>{item.email}</Cell>
                               <Cell>{item.nid}</Cell>
