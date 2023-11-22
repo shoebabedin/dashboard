@@ -7,6 +7,9 @@
     flex: 0 0 16.666667%;
     max-width: 16.666667%;
   }
+  .preview_s_single_ticket_box_head_icon svg {
+    height: 26px !important;
+  }
 }
 
 /** ------------------------------------------------------------------
