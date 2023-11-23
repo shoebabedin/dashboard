@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router';
 
 const TicketReg = () => {
@@ -30,7 +30,11 @@ const TicketReg = () => {
     <>
       <div className="dash_content_main oflow-hd">
         <div className="dash_content_main_head oflow-hd">
-          <h2>Manage Events</h2>
+          <h2>
+            {pathname === 'tickets' && 'Ticket'}
+            {pathname === 'promotion-discount' && 'Promotion & Discount'}
+            {pathname === 'priviliege-tickets' && 'Privilege Tickets'}
+          </h2>
         </div>
         <div className="dash_content_main_center">
           <div className="dash_content_main_center_with_padding">
