@@ -181,7 +181,7 @@ const MainRoutes = {
           element: <SettingsUser />
         },
         {
-          path: 'pre-registration',
+          path: 'event-pre-registration',
           element: <PreRegistration />
         },
         {
@@ -193,19 +193,19 @@ const MainRoutes = {
           element: <EditPreRegistration />
         },
         {
-          path: 'gate-management',
+          path: 'event-gate-management',
           element: <GateManagement />
         },
         {
-          path: 'single-events-priviliege',
+          path: 'event-priviliege-ticket',
           element: <SingleEventsPriviliege />
         },
         {
-          path: 'promotions-discount',
+          path: 'event-promotions-discount',
           element: <PromotionDiscount />
         },
         {
-          path: 'ticketing',
+          path: 'event-ticketing-registration',
           element: <SingleEventTicket />
         },
         {
@@ -213,7 +213,7 @@ const MainRoutes = {
           element: <TicketDetails />
         },
         {
-          path: 'early-bird-tickets',
+          path: 'event-early-bird-tickets',
           element: <EarlyBirdTicket />
         },
         {

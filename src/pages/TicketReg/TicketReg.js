@@ -8,16 +8,25 @@ const TicketReg = () => {
 
   const handleProceed = (event) => {
     event.preventDefault();
-    if (pathname === 'tickets') {
-      const redirectUrl = '/ticketing';
+    if (pathname === 'pre-registration') {
+      const redirectUrl = '/event-pre-registration';
+      window.location.href = redirectUrl;
+    }
+    if (pathname === 'tickets-registration') {
+      const redirectUrl = '/event-ticketing-registration';
       window.location.href = redirectUrl;
     }
     if (pathname === 'promotion-discount') {
-      const redirectUrl = '/promotions-discount';
+      const redirectUrl = '/event-promotions-discount';
       window.location.href = redirectUrl;
     }
+
     if (pathname === 'priviliege-tickets') {
-      const redirectUrl = '/single-events-priviliege';
+      const redirectUrl = '/event-priviliege-ticket';
+      window.location.href = redirectUrl;
+    }
+    if (pathname === 'early-bird-tickets') {
+      const redirectUrl = '/event-early-bird-tickets';
       window.location.href = redirectUrl;
     }
     // Construct the URL based on the selected value
@@ -25,15 +34,16 @@ const TicketReg = () => {
     // Redirect to the new URL
   };
 
-  console.log(pathname);
   return (
     <>
       <div className="dash_content_main oflow-hd">
         <div className="dash_content_main_head oflow-hd">
           <h2>
-            {pathname === 'tickets' && 'Ticket'}
+            {pathname === 'pre-registration' && 'Pre-Registration'}
+            {pathname === 'tickets-registration' && 'Ticketing / Registration'}
             {pathname === 'promotion-discount' && 'Promotion & Discount'}
             {pathname === 'priviliege-tickets' && 'Privilege Tickets'}
+            {pathname === 'early-bird-tickets' && 'Early Bird Tickets'}
           </h2>
         </div>
         <div className="dash_content_main_center">

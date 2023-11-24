@@ -626,9 +626,9 @@ select {
   color: #0b79bf;
   text-decoration: underline;
 }
-.dash_main_main_table_form {
+/* .dash_main_main_table_form {
   display: none;
-}
+} */
 .dash_main_main_table_form .row {
   margin: -7.5px;
 }
@@ -698,15 +698,15 @@ select {
 .ec_location_venue {
   padding-top: 18px;
 }
-.ec_location_venue {
+/* .ec_location_venue {
   display: none;
-}
+} */
 .dash_main_table_wrapper {
   width: 100%;
 }
-.artst_table {
+/* .artst_table {
   display: none;
-}
+} */
 .artst_table {
   overflow: hidden;
   width: 100%;
@@ -770,7 +770,7 @@ select {
   padding: 15px 20px;
   min-width: 150px;
   list-style: none;
-  display: none;
+  /* display: none; */
 }
 .dash_main_main_table_add ul li ul li {
   float: none;

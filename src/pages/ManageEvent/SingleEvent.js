@@ -77,7 +77,7 @@ const SingleEvent = () => {
               <div className="row">
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="/pre-registration">
+                    <Link to="/event-pre-registration">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -96,7 +96,7 @@ const SingleEvent = () => {
                 </div>
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="/ticketing">
+                    <Link to="/event-ticketing-registration">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clipPath="url(#clip0_937_298)">
@@ -120,7 +120,7 @@ const SingleEvent = () => {
                 </div>
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="/promotions-discount">
+                    <Link to="/event-promotions-discount">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clipPath="url(#clip0_937_301)">
@@ -152,7 +152,7 @@ const SingleEvent = () => {
                 </div>
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="/single-events-priviliege">
+                    <Link to="/event-priviliege-ticket">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clipPath="url(#clip0_941_2845)">
@@ -176,7 +176,7 @@ const SingleEvent = () => {
                 </div>
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="/early-bird-tickets">
+                    <Link to="/event-early-bird-tickets">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clipPath="url(#clip0_1282_7)">
@@ -200,7 +200,7 @@ const SingleEvent = () => {
                 </div>
                 <div className="col-6 col-md-4">
                   <div className="single_event_options_single oflow-hd">
-                    <Link to="/gate-management">
+                    <Link to="/event-gate-management">
                       <div className="single_event_options_single_icon oflow-hd">
                         <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
