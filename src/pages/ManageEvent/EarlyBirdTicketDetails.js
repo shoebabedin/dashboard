@@ -44,7 +44,7 @@ const EarlyBirdTicketDetails = () => {
   const theme = useTheme({
     Table: `
         --data-table-library_grid-template-columns:  repeat(17, 200px);
-        max-height: 841px;
+        max-height: 500px;
       `,
     BaseCell: `
         &:nth-of-type(1) {
@@ -163,6 +163,20 @@ const EarlyBirdTicketDetails = () => {
                       </>
                     )}
                   </Table>
+
+                  <div className="large_table_bottom oflow-hd">
+                    <div className="large_table_bottom_sr oflow-hd">
+                      Total Filtered Result: <span>50</span>
+                    </div>
+                    <ul>
+                      <li className="large_table_bottom_total_discount">
+                        Total Discount Amount: <span>1,00,000</span>
+                      </li>
+                      <li className="large_table_bottom_total_earn">
+                        Total Amount: <span>1,00,000</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
