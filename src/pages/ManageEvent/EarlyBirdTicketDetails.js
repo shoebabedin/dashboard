@@ -1,5 +1,6 @@
 import { Body, Cell, Header, HeaderCell, HeaderRow, Row, Table } from '@table-library/react-table-library';
 import { useTheme } from '@table-library/react-table-library/theme';
+import { useState } from 'react';
 import img1 from './../../assets/images/images/timg.png';
 const { Link } = require('react-router-dom');
 
@@ -40,6 +41,7 @@ const generateNodes = () => {
 };
 
 const EarlyBirdTicketDetails = () => {
+  const [filter, setFilter] = useState(false);
   const data = { nodes: generateNodes(50) };
   const theme = useTheme({
     Table: `
@@ -84,27 +86,110 @@ const EarlyBirdTicketDetails = () => {
                 <p>No data to show</p>
               </div>
 
-              <div className="preregistration_table_data_wrapper_table_details oflow-hd">
+              <div className="preregistration_table_data_wrapper_table_details oflow-hd preregistration_table_data_wrapper_table_details_largetable">
                 <h2>Total Registration Till Now: 103</h2>
-                <div className="preregistration_table_data_wrapper_table_details_filter oflow-hd">
-                  <span>Filter By</span>
-                  <div className="preregistration_table_data_wrapper_table_details_filter_box oflow-hd">
-                    <input className="largesearch" type="text" placeholder="Name/ Phone no / Email Address" />
-                    <select name="">
-                      <option value="" disabled selected>
-                        Day
-                      </option>
-                      <option value="">Day 1</option>
-                      <option value="">Day 2</option>
-                      <option value="">Day 3</option>
-                      <option value="">Day 4</option>
-                      <option value="">Day 5</option>
-                    </select>
-                    <input className="calendar" type="text" value="" placeholder="Date" />
-                    <input className="time" type="text" value="" placeholder="Time" />
-                  </div>
-                  <span className="searchrslttotal">Total Filtered Result: 50</span>
+                <div className="preregistration_table_data_wrapper_table_details_filteraction">
+                  <ul>
+                    {filter && (
+                      <li className={filter && 'active'}>
+                        <Link to="#!" onClick={() => setFilter(false)}>
+                          Cancel
+                        </Link>
+                      </li>
+                    )}
+                    {!filter && (
+                      <li>
+                        <Link to="#!" onClick={() => setFilter(true)}>
+                          Filter
+                        </Link>
+                      </li>
+                    )}
+                  </ul>
                 </div>
+                {filter && (
+                  <div className="preregistration_table_data_wrapper_bulksearch oflow-hd">
+                    <div className="row">
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <input type="text" value="" placeholder="Name/ Phone no / Email Address" />
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <select name="">
+                            <option value="" disabled selected>
+                              Day
+                            </option>
+                            <option value="">Day 1</option>
+                            <option value="">Day 2</option>
+                            <option value="">Day 3</option>
+                            <option value="">Day 4</option>
+                            <option value="">Day 5</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <input type="text" value="" placeholder="NID" />
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <select name="">
+                            <option value="" disabled selected>
+                              Geneder
+                            </option>
+                            <option value="">Male</option>
+                            <option value="">Female</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <select name="">
+                            <option value="" disabled selected>
+                              Purchased By
+                            </option>
+                            <option value="">Self</option>
+                            <option value="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <select name="">
+                            <option value="" disabled selected>
+                              Discount
+                            </option>
+                            <option value="">Yes</option>
+                            <option value="">No</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <select name="">
+                            <option value="" disabled selected>
+                              Discount Type
+                            </option>
+                            <option value="">Fixed</option>
+                            <option value="">Percentage</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <input className="calendar" type="text" value="" placeholder="Date" />
+                        </div>
+                      </div>
+                      <div className="col-6 col-md-4">
+                        <div className="single_input_box">
+                          <input className="time" type="text" value="" placeholder="Time" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="preregistration_table_data_wrapper_table oflow-hd">
