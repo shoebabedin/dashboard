@@ -119,20 +119,20 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   {/* <li>
                     <Link to="#">Dashboard</Link>
                   </li> */}
-                  <li>
-                    <Link to="/ticket-and-registration/pre-registration">Pre-Registration</Link>
+                  <li className={navigate.pathname === '/ticket-and-registration/pre-registration' && 'menu_active'}>
+                    <Link  to="/ticket-and-registration/pre-registration">Pre-Registration</Link>
                   </li>
-                  <li>
-                    <Link to="/ticket-and-registration/tickets-registration">Ticketing / Registration</Link>
+                  <li className={navigate.pathname === '/ticket-and-registration/tickets-registration' && 'menu_active'}>
+                    <Link  to="/ticket-and-registration/tickets-registration">Ticketing / Registration</Link>
                   </li>
-                  <li>
-                    <Link to="/ticket-and-registration/promotion-discount">Promotion & Discount</Link>
+                  <li className={navigate.pathname === '/ticket-and-registration/promotion-discount' && 'menu_active'}>
+                    <Link  to="/ticket-and-registration/promotion-discount">Promotion & Discount</Link>
                   </li>
-                  <li>
-                    <Link to="/ticket-and-registration/priviliege-tickets">Privilege Tickets</Link>
+                  <li className={navigate.pathname === '/ticket-and-registration/priviliege-tickets' && 'menu_active'}>
+                    <Link  to="/ticket-and-registration/priviliege-tickets">Privilege Tickets</Link>
                   </li>
-                  <li>
-                    <Link to="/ticket-and-registration/early-bird-tickets">Early Bird Tickets</Link>
+                  <li className={navigate.pathname === '/ticket-and-registration/early-bird-tickets' && 'menu_active'}>
+                    <Link  to="/ticket-and-registration/early-bird-tickets">Early Bird Tickets</Link>
                   </li>
                 </ul>
               </li>
