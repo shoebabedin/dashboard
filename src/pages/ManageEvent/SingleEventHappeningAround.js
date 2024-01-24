@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const SingleFeaturedEvent = () => {
+const SingleEventHappeningAround = () => {
   return (
     <>
       <div className="dash_content_main oflow-hd">
@@ -226,4 +226,4 @@ const SingleFeaturedEvent = () => {
   );
 };
 
-export default SingleFeaturedEvent;
+export default SingleEventHappeningAround;

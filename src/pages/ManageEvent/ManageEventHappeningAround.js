@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import banner from './../../assets/images/images/eventimg1.png';
 
-const ManageFeaturedEvent = () => {
+const ManageEventHappeningAround = () => {
   return (
     <>
       <div className="dash_content_main oflow-hd">
         <div className="dash_content_main_head oflow-hd">
-          <h2>Manage featured Events</h2>
+          <h2 className="text-capitalize">Manage Events on happening around</h2>
         </div>
         <div className="dash_content_main_center">
           <div className="dash_content_main_center_with_padding">
@@ -54,7 +54,7 @@ const ManageFeaturedEvent = () => {
                                 <Link to="#">Public Preview</Link>
                               </li>
                               <li>
-                                <Link to="/single-featured-event">View</Link>
+                                <Link to="/single-event-on-happening-around">View</Link>
                               </li>
                             </ul>
                           </div>
@@ -71,4 +71,4 @@ const ManageFeaturedEvent = () => {
   );
 };
 
-export default ManageFeaturedEvent;
+export default ManageEventHappeningAround;

@@ -7,6 +7,8 @@ import MainLayout from 'layout/MainLayout';
 import CreateDraftOnHappeningAround from 'pages/CreateEvent/CreateDraftOnHappeningAround';
 import CreateEventOnHappeningAround from 'pages/CreateEvent/CreateEventOnHappeningAround';
 import SubmitReviewOnHappeningAround from 'pages/CreateEvent/SubmitReviewOnHappeningAround';
+import ManageEventHappeningAround from 'pages/ManageEvent/ManageEventHappeningAround';
+import SingleEventHappeningAround from 'pages/ManageEvent/SingleEventHappeningAround';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
@@ -192,14 +194,14 @@ const MainRoutes = {
           path: 'single-event',
           element: <SingleEvent />
         },
-        // {
-        //   path: 'manage-featured-event',
-        //   element: <ManageFeaturedEvent />
-        // },
-        // {
-        //   path: 'single-featured-event',
-        //   element: <SingleFeaturedEvent />
-        // },
+        {
+          path: 'manage-events-on-happening-around',
+          element: <ManageEventHappeningAround />
+        },
+        {
+          path: 'single-event-on-happening-around',
+          element: <SingleEventHappeningAround />
+        },
         {
           path: 'users-roles',
           element: <SettingsUser />
