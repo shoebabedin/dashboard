@@ -78,14 +78,14 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   <img src={downArrow} alt="img" className={dropdownStates.createFeatureEvents ? 'menu-has-child-button-active' : ''} />
                 </Link>
                 <ul className={dropdownStates.createFeatureEvents ? 'menu-has-child-open' : ''}>
-                  <li className={navigate.pathname === '/create-event' && 'menu_active'}>
-                    <Link to="/create-event">Create Events</Link>
+                  <li className={navigate.pathname === '/create-event-on-happening-around' && 'menu_active'}>
+                    <Link to="/create-event-on-happening-around">Create Events</Link>
                   </li>
-                  <li className={navigate.pathname === '/create-draft' && 'menu_active'}>
-                    <Link to="/create-draft">Draft</Link>
+                  <li className={navigate.pathname === '/create-draft-on-happening-around' && 'menu_active'}>
+                    <Link to="/create-draft-on-happening-around">Draft</Link>
                   </li>
-                  <li className={navigate.pathname === '/create-submitted' && 'menu_active'}>
-                    <Link to="/create-submitted">Submitted for Review</Link>
+                  <li className={navigate.pathname === '/create-submitted-on-happening-around' && 'menu_active'}>
+                    <Link to="/create-submitted-on-happening-around">Submitted for Review</Link>
                   </li>
                 </ul>
               </li>

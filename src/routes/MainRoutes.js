@@ -4,6 +4,9 @@ import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 import CommonLayout from 'layout/CommonLayout';
 import MainLayout from 'layout/MainLayout';
+import CreateDraftOnHappeningAround from 'pages/CreateEvent/CreateDraftOnHappeningAround';
+import CreateEventOnHappeningAround from 'pages/CreateEvent/CreateEventOnHappeningAround';
+import SubmitReviewOnHappeningAround from 'pages/CreateEvent/SubmitReviewOnHappeningAround';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
@@ -163,6 +166,18 @@ const MainRoutes = {
         {
           path: 'create-submitted',
           element: <SubmitReview />
+        },
+        {
+          path: 'create-event-on-happening-around',
+          element: <CreateEventOnHappeningAround />
+        },
+        {
+          path: 'create-draft-on-happening-around',
+          element: <CreateDraftOnHappeningAround />
+        },
+        {
+          path: 'create-submitted-on-happening-around',
+          element: <SubmitReviewOnHappeningAround />
         },
         {
           path: 'company-information',

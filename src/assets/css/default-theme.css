@@ -27,6 +27,9 @@ body {
   overflow: auto;
   height: 100%;
 }
+.dash_left_bar::-webkit-scrollbar {
+  width: 5px;
+}
 .dash_left_bar_logo button {
   padding: 0;
   line-height: 1;
