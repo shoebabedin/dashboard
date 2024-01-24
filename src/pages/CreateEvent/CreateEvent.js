@@ -116,7 +116,7 @@ const CreateEvent = () => {
         </div>
         <div className="dash_content_main_bottom_process oflow-hd">
           {step > 1 && (
-            <Link to="#" type="button" className="float-left" onClick={() => setStep(step - 1)}>
+            <Link to="#" type="button" className="float-left back" onClick={() => setStep(step - 1)}>
               Back
             </Link>
           )}

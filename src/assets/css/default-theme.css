@@ -246,6 +246,10 @@ body {
   text-align: center;
   min-width: 110px;
 }
+.dash_content_main_bottom_process a.back {
+  color: #666;
+  background: #ddd;
+}
 .dash_content_main_bottom_process a:hover {
   opacity: 0.7;
 }
