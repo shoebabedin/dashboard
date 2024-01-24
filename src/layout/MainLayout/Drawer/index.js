@@ -9,6 +9,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
   // State for managing the open/closed state of each dropdown
   const [dropdownStates, setDropdownStates] = useState({
     createEvents: false,
+    createFeatureEvents: false,
     ticketing: false,
     settingPrivacy: false
   });
@@ -71,6 +72,23 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   </li>
                 </ul>
               </li>
+              <li className="has_dropdown">
+                <Link to="#" onClick={() => toggleDropdown('createFeatureEvents')}>
+                  Create featured events
+                  <img src={downArrow} alt="img" className={dropdownStates.createFeatureEvents ? 'menu-has-child-button-active' : ''} />
+                </Link>
+                <ul className={dropdownStates.createFeatureEvents ? 'menu-has-child-open' : ''}>
+                  <li className={navigate.pathname === '/create-event' && 'menu_active'}>
+                    <Link to="/create-event">Create Events</Link>
+                  </li>
+                  <li className={navigate.pathname === '/create-draft' && 'menu_active'}>
+                    <Link to="/create-draft">Draft</Link>
+                  </li>
+                  <li className={navigate.pathname === '/create-submitted' && 'menu_active'}>
+                    <Link to="/create-submitted">Submitted for Review</Link>
+                  </li>
+                </ul>
+              </li>
               <li
                 className={`${navigate.pathname === '/manage-event' && 'menu_active'} ${
                   navigate.pathname === '/single-event' && 'menu_active'
@@ -79,6 +97,15 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                 ${navigate.pathname === '/create-pre-registration' && 'menu_active'}`}
               >
                 <Link to="/manage-event">Manage Events</Link>
+              </li>
+              <li
+                className={`${navigate.pathname === '/manage-featured-event' && 'menu_active'} ${
+                  navigate.pathname === '/single-featured-event' && 'menu_active'
+                } 
+                ${navigate.pathname === '/pre-registration' && 'menu_active'}
+                ${navigate.pathname === '/create-pre-registration' && 'menu_active'}`}
+              >
+                <Link to="/manage-featured-event">Manage featured events</Link>
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => toggleDropdown('tracking')}>

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import EventInfo from './EventInfo';
-import EventTermsCondition from './EventTermsCondition';
-import EventContent from './EventContent';
 import EventConfig from './EventConfig';
+import EventContent from './EventContent';
+import EventInfo from './EventInfo';
 import EventPreview from './EventPreview';
+import EventTermsCondition from './EventTermsCondition';
 
 const CreateEvent = () => {
   const [selectedValue, setSelectedValue] = useState('1');
@@ -31,7 +31,7 @@ const CreateEvent = () => {
                 </div>
                 <div className="form_left_col_progress oflow-hd">
                   <ul>
-                    <li className={step === 1 && 'current' || step >= 1 && "checked"}>
+                    <li className={(step === 1 && 'current') || (step >= 1 && 'checked')}>
                       <Link to="#">
                         <div>
                           <span>01</span>
@@ -45,7 +45,7 @@ const CreateEvent = () => {
                         <p>Event Information</p>
                       </Link>
                     </li>
-                    <li className={step === 2 && 'current' || step >= 2 && "checked"}>
+                    <li className={(step === 2 && 'current') || (step >= 2 && 'checked')}>
                       <Link to="#">
                         <div>
                           <span>02</span>
@@ -59,7 +59,7 @@ const CreateEvent = () => {
                         <p>Event Configuration</p>
                       </Link>
                     </li>
-                    <li className={step === 3 && 'current' || step >= 3 && "checked"}>
+                    <li className={(step === 3 && 'current') || (step >= 3 && 'checked')}>
                       <Link to="#">
                         <div>
                           <span>03</span>
@@ -73,7 +73,7 @@ const CreateEvent = () => {
                         <p>Event Contents</p>
                       </Link>
                     </li>
-                    <li className={step === 4 && 'current' || step >= 4 && "checked"}>
+                    <li className={(step === 4 && 'current') || (step >= 4 && 'checked')}>
                       <Link to="#">
                         <div>
                           <span>04</span>
@@ -115,6 +115,11 @@ const CreateEvent = () => {
           </div>
         </div>
         <div className="dash_content_main_bottom_process oflow-hd">
+          {step > 1 && (
+            <Link to="#" type="button" className="float-left" onClick={() => setStep(step - 1)}>
+              Back
+            </Link>
+          )}
           {step < 5 ? (
             <Link to="#" type="button" onClick={() => setStep(step + 1)}>
               Proceed

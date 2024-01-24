@@ -4,7 +4,9 @@ import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 import CommonLayout from 'layout/CommonLayout';
 import MainLayout from 'layout/MainLayout';
+import ManageFeaturedEvent from 'pages/ManageEvent/ManageFeaturedEvent';
 import AuthGuard from 'utils/route-guard/AuthGuard';
+import SingleFeaturedEvent from 'pages/ManageEvent/SingleFeaturedEvent';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/default')));
@@ -172,9 +174,18 @@ const MainRoutes = {
           path: 'manage-event',
           element: <ManageEvent />
         },
+
         {
           path: 'single-event',
           element: <SingleEvent />
+        },
+        {
+          path: 'manage-featured-event',
+          element: <ManageFeaturedEvent />
+        },
+        {
+          path: 'single-featured-event',
+          element: <SingleFeaturedEvent />
         },
         {
           path: 'users-roles',
