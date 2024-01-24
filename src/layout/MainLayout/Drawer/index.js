@@ -101,9 +101,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
               <li
                 className={`${navigate.pathname === '/manage-featured-event' && 'menu_active'} ${
                   navigate.pathname === '/single-featured-event' && 'menu_active'
-                } 
-                ${navigate.pathname === '/pre-registration' && 'menu_active'}
-                ${navigate.pathname === '/create-pre-registration' && 'menu_active'}`}
+                }`}
               >
                 <Link to="/manage-featured-event">Manage featured events</Link>
               </li>
@@ -120,19 +118,19 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                     <Link to="#">Dashboard</Link>
                   </li> */}
                   <li className={navigate.pathname === '/ticket-and-registration/pre-registration' && 'menu_active'}>
-                    <Link  to="/ticket-and-registration/pre-registration">Pre-Registration</Link>
+                    <Link to="/ticket-and-registration/pre-registration">Pre-Registration</Link>
                   </li>
                   <li className={navigate.pathname === '/ticket-and-registration/tickets-registration' && 'menu_active'}>
-                    <Link  to="/ticket-and-registration/tickets-registration">Ticketing / Registration</Link>
+                    <Link to="/ticket-and-registration/tickets-registration">Ticketing / Registration</Link>
                   </li>
                   <li className={navigate.pathname === '/ticket-and-registration/promotion-discount' && 'menu_active'}>
-                    <Link  to="/ticket-and-registration/promotion-discount">Promotion & Discount</Link>
+                    <Link to="/ticket-and-registration/promotion-discount">Promotion & Discount</Link>
                   </li>
                   <li className={navigate.pathname === '/ticket-and-registration/priviliege-tickets' && 'menu_active'}>
-                    <Link  to="/ticket-and-registration/priviliege-tickets">Privilege Tickets</Link>
+                    <Link to="/ticket-and-registration/priviliege-tickets">Privilege Tickets</Link>
                   </li>
                   <li className={navigate.pathname === '/ticket-and-registration/early-bird-tickets' && 'menu_active'}>
-                    <Link  to="/ticket-and-registration/early-bird-tickets">Early Bird Tickets</Link>
+                    <Link to="/ticket-and-registration/early-bird-tickets">Early Bird Tickets</Link>
                   </li>
                 </ul>
               </li>
