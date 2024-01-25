@@ -57,7 +57,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => toggleDropdown('createEvents')}>
-                  Create featured events
+                  Create Featured Events
                   <img src={downArrow} alt="img" className={dropdownStates.createEvents ? 'menu-has-child-button-active' : ''} />
                 </Link>
                 <ul className={dropdownStates.createEvents ? 'menu-has-child-open' : ''}>
@@ -74,7 +74,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => toggleDropdown('createFeatureEvents')}>
-                  Create events on happening around
+                  Create Events On Happening Around
                   <img src={downArrow} alt="img" className={dropdownStates.createFeatureEvents ? 'menu-has-child-button-active' : ''} />
                 </Link>
                 <ul className={dropdownStates.createFeatureEvents ? 'menu-has-child-open' : ''}>
@@ -96,7 +96,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                 ${navigate.pathname === '/pre-registration' && 'menu_active'}
                 ${navigate.pathname === '/create-pre-registration' && 'menu_active'}`}
               >
-                <Link to="/manage-featured-event">Manage featured events</Link>
+                <Link to="/manage-featured-event">Manage Featured Events</Link>
               </li>
               <li
                 className={`${navigate.pathname === '/manage-events-on-happening-around' && 'menu_active'} ${
