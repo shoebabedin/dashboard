@@ -153,7 +153,7 @@ const SingleEventSettings = () => {
                         <div className="single_input_box prereg_form_exclusive">
                           <label htmlFor="#">Pause Event?</label>
                           <div className="single_input_box_rado">
-                            <Switch isOn={checked} handleToggle={() => setChecked(!checked)} colorOne="#EF476F" colorTwo="#06D6A0" />
+                            <Switch isOn={checked} handleToggle={() => setChecked(!checked)} colorOne="#7CB7DD" colorTwo="#eee" />
                             {/* <ul>
                               <li>
                                 <input type="radio" name="ei_entry_fee" id="Yes" value="Yes" />
