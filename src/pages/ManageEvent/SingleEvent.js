@@ -41,7 +41,7 @@ const SingleEvent = () => {
           <div className="dash_content_main_event_head_action oflow-hd">
             <ul>
               <li>
-                <Link to="#">Edit Event Details</Link>
+                <Link to="/create-event">Edit Event Details</Link>
               </li>
               <li>
                 <Link to="#">Event Settings</Link>
