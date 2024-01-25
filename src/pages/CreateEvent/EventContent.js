@@ -115,13 +115,13 @@ const EventContent = () => {
                       </tr>
                     </table>
                   </div>
-                  <div className="dash_main_main_table_empty">No artist added yet</div>
+                  <div className="dash_main_main_table_empty">No sponser added yet</div>
                   <div className="dash_main_main_table_add oflow-hd">
                     {!addArtist && (
                       <ul>
                         <li>
                           <Link className="addMoreArtist" to="#!" onClick={() => setAddArtist(true)}>
-                            Add Artist +
+                            Add Sponser +
                           </Link>
                         </li>
                       </ul>
