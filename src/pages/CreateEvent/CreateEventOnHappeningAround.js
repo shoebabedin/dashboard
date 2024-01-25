@@ -108,7 +108,6 @@ const CreateEventOnHappeningAround = () => {
               {step === 1 && <EventHappeningInfo selectedValue={selectedValue} handleDropdownChange={handleDropdownChange} />}
               {step === 2 && <EventConfig />}
               {step === 3 && <EventHappeningContent />}
-              {/* {step === 4 && <EventTermsCondition />} */}
               {step === 4 && <EventHappeningPreview />}
             </div>
           </div>
