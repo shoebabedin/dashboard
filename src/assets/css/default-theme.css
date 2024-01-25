@@ -2312,3 +2312,58 @@ select {
 .preregistration_table_data_wrapper_table_details_filteraction ul li a:hover {
   opacity: 0.8;
 }
+
+/* new css */
+.pre_reg_from_main_single .switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.pre_reg_from_main_single .switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.pre_reg_from_main_single .switch-label .switch-button {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.pre_reg_from_main_single .switch-checkbox:checked + .switch-label .switch-button {
+  top: 50%;
+  left: calc(100% - 2px);
+  transform: translate(-100%, -50%);
+  -webkit-transform: translate(-100%, -50%);
+  -moz-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  -o-transform: translate(-100%, -50%);
+}
+.pre_reg_from_main_single .switch-checkbox + .switch-label::before {
+  visibility: hidden;
+  opacity: 0;
+}
+.pre_reg_from_main_single .switch-label:active .switch-button {
+  width: 60px;
+}

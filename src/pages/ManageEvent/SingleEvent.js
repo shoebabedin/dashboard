@@ -44,7 +44,7 @@ const SingleEvent = () => {
                 <Link to="/create-event">Edit Event Details</Link>
               </li>
               <li>
-                <Link to="#">Event Settings</Link>
+                <Link to="/single-event-settings">Event Settings</Link>
               </li>
               <li>
                 <Link to="#">Public Preview</Link>

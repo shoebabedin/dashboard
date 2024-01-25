@@ -9,6 +9,7 @@ import CreateEventOnHappeningAround from 'pages/CreateEvent/CreateEventOnHappeni
 import SubmitReviewOnHappeningAround from 'pages/CreateEvent/SubmitReviewOnHappeningAround';
 import ManageEventHappeningAround from 'pages/ManageEvent/ManageEventHappeningAround';
 import SingleEventHappeningAround from 'pages/ManageEvent/SingleEventHappeningAround';
+import SingleEventSettings from 'pages/ManageEvent/SingleEventSettings';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
@@ -214,6 +215,7 @@ const MainRoutes = {
           path: 'create-pre-registration',
           element: <CreatePreRegistration />
         },
+
         {
           path: 'edit-pre-registration',
           element: <EditPreRegistration />
@@ -221,6 +223,10 @@ const MainRoutes = {
         {
           path: 'event-gate-management',
           element: <GateManagement />
+        },
+        {
+          path: 'single-event-settings',
+          element: <SingleEventSettings />
         },
         {
           path: 'event-priviliege-ticket',
