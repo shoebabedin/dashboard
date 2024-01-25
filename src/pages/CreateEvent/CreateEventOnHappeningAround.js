@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EventConfig from './EventConfig';
 import EventContent from './EventContent';
-import EventInfo from './EventInfo';
+import EventHappeningInfo from './EventHappeningInfo';
 import EventPreview from './EventPreview';
-import EventTermsCondition from './EventTermsCondition';
 
 const CreateEventOnHappeningAround = () => {
   const [selectedValue, setSelectedValue] = useState('1');
@@ -73,7 +72,7 @@ const CreateEventOnHappeningAround = () => {
                         <p>Event Contents</p>
                       </Link>
                     </li>
-                    <li className={(step === 4 && 'current') || (step >= 4 && 'checked')}>
+                    {/* <li className={(step === 4 && 'current') || (step >= 4 && 'checked')}>
                       <Link to="#">
                         <div>
                           <span>04</span>
@@ -86,11 +85,11 @@ const CreateEventOnHappeningAround = () => {
                         </div>
                         <p>Terms and Conditions</p>
                       </Link>
-                    </li>
-                    <li className={step === 5 && 'current'}>
+                    </li> */}
+                    <li className={step === 4 && 'current'}>
                       <Link to="#">
                         <div>
-                          <span>05</span>
+                          <span>04</span>
                           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                               d="M3.82918 8.72843C3.73373 8.82445 3.60348 8.87802 3.4682 8.87802C3.33293 8.87802 3.20268 8.82445 3.10723 8.72843L0.224383 5.84511C-0.0747942 5.54593 -0.0747942 5.06079 0.224383 4.76218L0.585358 4.40111C0.88463 4.10194 1.3692 4.10194 1.66838 4.40111L3.46823 6.20103L8.33157 1.33754C8.63085 1.03836 9.1159 1.03836 9.41459 1.33754L9.77557 1.69861C10.0747 1.99779 10.0747 2.48284 9.77557 2.78154L3.82918 8.72843Z"
@@ -106,11 +105,11 @@ const CreateEventOnHappeningAround = () => {
               </div>
             </div>
             <div className="col-md-7">
-              {step === 1 && <EventInfo selectedValue={selectedValue} handleDropdownChange={handleDropdownChange} />}
+              {step === 1 && <EventHappeningInfo selectedValue={selectedValue} handleDropdownChange={handleDropdownChange} />}
               {step === 2 && <EventConfig />}
               {step === 3 && <EventContent />}
-              {step === 4 && <EventTermsCondition />}
-              {step === 5 && <EventPreview />}
+              {/* {step === 4 && <EventTermsCondition />} */}
+              {step === 4 && <EventPreview />}
             </div>
           </div>
         </div>
