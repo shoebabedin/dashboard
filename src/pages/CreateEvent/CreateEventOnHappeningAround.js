@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import EventConfig from './EventConfig';
 import EventHappeningContent from './EventHappeningContent';
 import EventHappeningInfo from './EventHappeningInfo';
-import EventPreview from './EventPreview';
+import EventHappeningPreview from './EventHappeningPreview';
 
 const CreateEventOnHappeningAround = () => {
   const [selectedValue, setSelectedValue] = useState('1');
@@ -109,7 +109,7 @@ const CreateEventOnHappeningAround = () => {
               {step === 2 && <EventConfig />}
               {step === 3 && <EventHappeningContent />}
               {/* {step === 4 && <EventTermsCondition />} */}
-              {step === 4 && <EventPreview />}
+              {step === 4 && <EventHappeningPreview />}
             </div>
           </div>
         </div>

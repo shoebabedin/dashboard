@@ -1,9 +1,9 @@
 import { Editor } from '@tinymce/tinymce-react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 const EventHappeningContent = () => {
   const editorRef = useRef(null);
-  const [addArtist, setAddArtist] = useState(false);
+  // const [addArtist, setAddArtist] = useState(false);
   return (
     <>
       <div className="form_box_area_main event_information_form oflow-hd">
