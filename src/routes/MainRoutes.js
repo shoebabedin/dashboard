@@ -10,6 +10,7 @@ import SubmitReviewOnHappeningAround from 'pages/CreateEvent/SubmitReviewOnHappe
 import ManageEventHappeningAround from 'pages/ManageEvent/ManageEventHappeningAround';
 import SingleEventHappeningAround from 'pages/ManageEvent/SingleEventHappeningAround';
 import SingleEventSettings from 'pages/ManageEvent/SingleEventSettings';
+import SingleEventSettingsHappeningAround from 'pages/ManageEvent/SingleEventSettingsHappeningAround';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // render - dashboard
@@ -202,6 +203,10 @@ const MainRoutes = {
         {
           path: 'single-event-on-happening-around',
           element: <SingleEventHappeningAround />
+        },
+        {
+          path: 'single-event-settings-happening-around',
+          element: <SingleEventSettingsHappeningAround />
         },
         {
           path: 'users-roles',
