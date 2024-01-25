@@ -103,7 +103,7 @@ const MainDrawer = ({ customOpen, setCustomOpen }) => {
                   navigate.pathname === '/single-featured-event' && 'menu_active'
                 }`}
               >
-                <Link to="/manage-events-on-happening-around">Manage Events on Happening around</Link>
+                <Link to="/manage-events-on-happening-around">Manage Events On Happening Around</Link>
               </li>
               <li className="has_dropdown">
                 <Link to="#" onClick={() => toggleDropdown('tracking')}>
