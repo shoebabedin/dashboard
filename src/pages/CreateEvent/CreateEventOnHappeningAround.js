@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EventConfig from './EventConfig';
-import EventContent from './EventContent';
+import EventHappeningContent from './EventHappeningContent';
 import EventHappeningInfo from './EventHappeningInfo';
 import EventPreview from './EventPreview';
 
@@ -107,7 +107,7 @@ const CreateEventOnHappeningAround = () => {
             <div className="col-md-7">
               {step === 1 && <EventHappeningInfo selectedValue={selectedValue} handleDropdownChange={handleDropdownChange} />}
               {step === 2 && <EventConfig />}
-              {step === 3 && <EventContent />}
+              {step === 3 && <EventHappeningContent />}
               {/* {step === 4 && <EventTermsCondition />} */}
               {step === 4 && <EventPreview />}
             </div>
